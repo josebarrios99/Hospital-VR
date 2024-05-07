@@ -4,11 +4,44 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum AccionesAValidar { 
+
+
+
+}
+
 public class Rubrica : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI textoCondiciones;
     //acciones
-    public bool c1, c2, c3, c4, c5, c6, c7 = true, c8, c9, c10, c11, c12, c13 = true, c14, c15, c16, c17, c18, c19, c20, c21, c22, c23, c24, c25, c26, c27, c28;
+    public bool SeLlamoAlPacientePrimero,
+        SeTomoElPulsoDeSegundo,
+        CompresionesAntesDe30Segundos,
+        CompresionesConFrecuencia100_120cpm,
+        CompresionesConProfundidad5_6cm,
+        CompresionesPresentesEl60DelTiempo,
+        CompresionesNoFueronIniciadasSiElPacienteTienePulso = true,
+        ManipularDesfribiladorAntesDe30Segs,
+        SeEnciendeDesfribiladorComoPrimeraOpcionDespuesDeManipularlo,
+        SeElijeUnaCargaDe200JDespuesDeEncenderse,
+        SeAdministraDescargaSiElRitmoEsFV,
+        DespuesDeLaDescargaSeDejaDeManipularYSeInicianCompresiones,
+        NoSeAdministraDescargaSiElRitmoNoEsFV = true,
+        SiElRitmoNoEsFVLaPrimeraAccionEsDejarDeManipularYLuegoTomarPulso,
+        VentilacionesIniciadasAntesDe45Segs,
+        SeElijeUnaRelacion30_2,
+        SePusoUnAccesoVenosoAntesDe45Segs,
+        SeAdministraAdrenalinaComoPrimeraOpcion,
+        SiAdministraAdrenalinaLaDosisEs1mg,
+        SiAdministraAmiodaronaLaDosisEs300mg,
+        SiAdministraLidocainaLaDosisEs70_100mg,
+        LaViaElegidaSiempreEsIntraVenosa,
+        SiAdministraAmiodaronaNoPuedeSerAntesDe6Mins,
+        SiAdministraLidocainaNoPuedeSerAntesDe6Mins,
+        NoSeAdministraNingunOtroMedicamentoDiferenteSiElPacienteEstaEnParo,
+        SeTomaLaPresionArterialSoloSiHayPulso,
+        SePoneSaturadorSoloSiHayPulso,
+        SeTomaElectrocardiogramaSoloSiHayPulso;
     //medicamentos
     public TMP_InputField inputDosis;
     public TMP_InputField inputFrecuencia;
@@ -69,103 +102,103 @@ public class Rubrica : MonoBehaviour
     {
         string texto = "Condiciones cumplidas:\n";
 
-        if (c1 == true)
+        if (SeLlamoAlPacientePrimero == true)
         {
             texto += "- Condición 1\n";
         }
-        if (c2 == true)
+        if (SeTomoElPulsoDeSegundo == true)
         {
             texto += "- Condición 2\n";
         }
-        if (c3 == true)
+        if (CompresionesAntesDe30Segundos == true)
         {
             texto += "- Condición 3\n";
         }
-        if (c4 == true)
+        if (CompresionesConFrecuencia100_120cpm == true)
         {
             texto += "- Condición 4\n";
         }
-        if (c5 == true)
+        if (CompresionesConProfundidad5_6cm == true)
         {
             texto += "- Condición 5\n";
         }
-        if (c7 == true)
+        if (CompresionesNoFueronIniciadasSiElPacienteTienePulso == true)
         {
             texto += "- Condición 7\n";
         }
-        if (c8 == true)
+        if (ManipularDesfribiladorAntesDe30Segs == true)
         {
             texto += "- Condición 8\n";
         }
-        if (c10 == true)
+        if (SeElijeUnaCargaDe200JDespuesDeEncenderse == true)
         {
             texto += "- Condición 10\n";
         }
-        if (c11 == true)
+        if (SeAdministraDescargaSiElRitmoEsFV == true)
         {
             texto += "- Condición 11\n";
         }
-        if (c13 == true)
+        if (NoSeAdministraDescargaSiElRitmoNoEsFV == true)
         {
             texto += "- Condición 13\n";
         }
-        if (c14 == true)
+        if (SiElRitmoNoEsFVLaPrimeraAccionEsDejarDeManipularYLuegoTomarPulso == true)
         {
             texto += "- Condición 14\n";
         }
-        if (c15 == true)
+        if (VentilacionesIniciadasAntesDe45Segs == true)
         {
             texto += "- Condición 15\n";
         }
-        if (c16 == true)
+        if (SeElijeUnaRelacion30_2 == true)
         {
             texto += "- Condición 16\n";
         }
-        if (c17 == true)
+        if (SePusoUnAccesoVenosoAntesDe45Segs == true)
         {
             texto += "- Condición 17\n";
         }
-        if (c18 == true)
+        if (SeAdministraAdrenalinaComoPrimeraOpcion == true)
         {
             texto += "- Condición 18\n";
         }
-        if (c19 == true)
+        if (SiAdministraAdrenalinaLaDosisEs1mg == true)
         {
             texto += "- Condición 19\n";
         }
-        if (c20 == true)
+        if (SiAdministraAmiodaronaLaDosisEs300mg == true)
         {
             texto += "- Condición 20\n";
         }
-        if (c21 == true)
+        if (SiAdministraLidocainaLaDosisEs70_100mg == true)
         {
             texto += "- Condición 21\n";
         }
-        if (c22 == true)
+        if (LaViaElegidaSiempreEsIntraVenosa == true)
         {
             texto += "- Condición 22\n";
         }
-        if (c23 == true)
+        if (SiAdministraAmiodaronaNoPuedeSerAntesDe6Mins == true)
         {
             texto += "- Condición 23\n";
         }
-        if (c24 == true)
+        if (SiAdministraLidocainaNoPuedeSerAntesDe6Mins == true)
         {
             texto += "- Condición 24\n";
         }
-        if (c25 == true)
+        if (NoSeAdministraNingunOtroMedicamentoDiferenteSiElPacienteEstaEnParo == true)
         {
             texto += "- Condición 25\n";
         }
-        if (c26 == true)
+        if (SeTomaLaPresionArterialSoloSiHayPulso == true)
         {
             texto += "- Condición 26\n";
         }
-        if (c27 == true)
+        if (SePoneSaturadorSoloSiHayPulso == true)
         {
             texto += "- Condición 27\n";
         }
-        if (c28 == true)
+        if (SeTomaElectrocardiogramaSoloSiHayPulso == true)
         {
             texto += "- Condición 28\n";
         }
@@ -183,29 +216,29 @@ public class Rubrica : MonoBehaviour
         {
             if (numeroIngresado >= dosisMinima && numeroIngresado <= dosisMaxima)
             {
-                c21 = true;
+                SiAdministraLidocainaLaDosisEs70_100mg = true;
                 
             }
             else
             {
-                c21 = false;
+                SiAdministraLidocainaLaDosisEs70_100mg = false;
             }
         }
         if (inputDosis.text == "1" && adrenalina == true && confirmarDosis == true)
         {
-            c19 = true;
+            SiAdministraAdrenalinaLaDosisEs1mg = true;
             
         }
         else
         {
-            c19 = false;
+            SiAdministraAdrenalinaLaDosisEs1mg = false;
         }
         if (inputDosis.text == "300" && amiodarona == true && confirmarDosis == true)
         {
-            c20 = true;
+            SiAdministraAmiodaronaLaDosisEs300mg = true;
             
         }
-        else { c20 = false; }
+        else { SiAdministraAmiodaronaLaDosisEs300mg = false; }
     }
     public void ValidarInputFrecuencia()
     {
@@ -216,12 +249,12 @@ public class Rubrica : MonoBehaviour
         {
             if (numeroIngresado >= frecuenciaMin && numeroIngresado <= frecuenciaMax)
             {
-                c4 = true;
+                CompresionesConFrecuencia100_120cpm = true;
                 Debug.Log("conejo");
             }
             else
             {
-                c4 = false;
+                CompresionesConFrecuencia100_120cpm = false;
             }
         }
     }
@@ -233,12 +266,12 @@ public class Rubrica : MonoBehaviour
         {
             if (numeroIngresado >= profundidadMin && numeroIngresado <= profundidadMax)
             {
-                c5 = true;
+                CompresionesConProfundidad5_6cm = true;
                 
             }
             else
             {
-                c5 = false;
+                CompresionesConProfundidad5_6cm = false;
             }
         }
     }
@@ -246,7 +279,7 @@ public class Rubrica : MonoBehaviour
     {
         if (adrenalina == false && amiodarona == false && lidocaina == false)
         {
-            c18 = true;
+            SeAdministraAdrenalinaComoPrimeraOpcion = true;
         }
         adrenalina = true;
         Debug.Log("adrenalina");
@@ -270,7 +303,7 @@ public class Rubrica : MonoBehaviour
     }
     public void validarVentilaciones()
     {
-        c16 = true;
+        SeElijeUnaRelacion30_2 = true;
     }
     void ValidarOrdenBoton(int indiceBoton)
     {
@@ -280,14 +313,14 @@ public class Rubrica : MonoBehaviour
 
             if (indiceSiguientePaciente >= secuenciaPaciente.Count)
             {
-                c1 = true;
-                c2 = true;
+                SeLlamoAlPacientePrimero = true;
+                SeTomoElPulsoDeSegundo = true;
             }
         }
         else
         {
-            c1 = false;
-            c2 = false;
+            SeLlamoAlPacientePrimero = false;
+            SeTomoElPulsoDeSegundo = false;
             indiceSiguientePaciente = 0;
         }
     }
@@ -299,13 +332,13 @@ public class Rubrica : MonoBehaviour
 
             if (indiceSiguienteDescarga >= secuenciaDescarga.Count)
             {
-                c12 = true;
+                DespuesDeLaDescargaSeDejaDeManipularYSeInicianCompresiones = true;
             }
         }
 
         else
         {
-            c12 = false;
+            DespuesDeLaDescargaSeDejaDeManipularYSeInicianCompresiones = false;
             indiceSiguienteDescarga = 0;
         }
     }
@@ -319,7 +352,7 @@ public class Rubrica : MonoBehaviour
 
             if (indiceSiguientePulso >= secuenciaPulso.Count)
             {
-                c14 = true;
+                SiElRitmoNoEsFVLaPrimeraAccionEsDejarDeManipularYLuegoTomarPulso = true;
                 // Todas las acciones se han realizado en el orden correcto
                 Debug.Log("¡Todas las acciones realizadas en el orden correcto!");
                 // Aquí puedes activar otro objeto o hacer cualquier otra acción
@@ -328,7 +361,7 @@ public class Rubrica : MonoBehaviour
 
         else
         {
-            c14 = false;
+            SiElRitmoNoEsFVLaPrimeraAccionEsDejarDeManipularYLuegoTomarPulso = false;
             // La acción está fuera de orden
             Debug.Log("¡Error! Acción fuera de orden.");
             // Puedes reiniciar el contador aquí si quieres reiniciar el orden después de un error

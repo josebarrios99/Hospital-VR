@@ -34,11 +34,11 @@ public class Iniciarcompresiones : MonoBehaviour
     {
         if (FindObjectOfType<Crono>().getTiempoMinutos() <= 0.5)
         {
-            FindObjectOfType<Rubrica>().c3 = true;
+            FindObjectOfType<Rubrica>().CompresionesAntesDe30Segundos = true;
         }
         if (FindObjectOfType<Controladoracciones>().pulso == true)
         {
-            FindObjectOfType<Rubrica>().c7 = false;
+            FindObjectOfType<Rubrica>().CompresionesNoFueronIniciadasSiElPacienteTienePulso = false;
         }
         anim.SetBool("Iniciar compresiones", true);
         controlador.nuevoCiclo(4, "Iniciar compresiones");
@@ -72,7 +72,7 @@ public class Iniciarcompresiones : MonoBehaviour
     {
         if (FindObjectOfType<Crono>().getTiempoMinutos() <= 0.75)
         {
-            FindObjectOfType<Rubrica>().c15 = true;
+            FindObjectOfType<Rubrica>().VentilacionesIniciadasAntesDe45Segs = true;
         }
         anim.SetBool("Poner mascarilla", true);
         controlador.nuevoCiclo(3, "Iniciar ventilaciones");
@@ -84,41 +84,44 @@ public class Iniciarcompresiones : MonoBehaviour
 
     public void ponerMedicamento()
     {
-        FindObjectOfType<Rubrica>().c22 = true;
+        FindObjectOfType<Rubrica>().LaViaElegidaSiempreEsIntraVenosa = true;
         anim.SetBool("Poner acceso venoso", true);
         controlador.nuevoCiclo(5, "Poner medicamento");
         if (FindObjectOfType<Crono>().getTiempoMinutos() <= 2.5)
         {
-            FindObjectOfType<Rubrica>().c17 = true;
+            FindObjectOfType<Rubrica>().SePusoUnAccesoVenosoAntesDe45Segs = true;
         }
         if (FindObjectOfType<Crono>().getTiempoMinutos() <= 6)
         {
             if (FindObjectOfType<Rubrica>().amiodarona == true)
             {
-                FindObjectOfType<Rubrica>().c23 = true;
+                FindObjectOfType<Rubrica>().SiAdministraAmiodaronaNoPuedeSerAntesDe6Mins = true;
             }
             if (FindObjectOfType<Rubrica>().lidocaina == true)
             {
-                FindObjectOfType<Rubrica>().c24 = true;
+                FindObjectOfType<Rubrica>().SiAdministraLidocainaNoPuedeSerAntesDe6Mins = true;
             }
         }
         if (FindObjectOfType<Rubrica>().lidocaina == true || FindObjectOfType<Rubrica>().amiodarona == true || FindObjectOfType<Rubrica>().adrenalina == true)
         {
-            FindObjectOfType<Rubrica>().c25 = true;
-        } else { FindObjectOfType<Rubrica>().c25 = false; }
+            FindObjectOfType<Rubrica>().NoSeAdministraNingunOtroMedicamentoDiferenteSiElPacienteEstaEnParo = true;
+        } else { FindObjectOfType<Rubrica>().NoSeAdministraNingunOtroMedicamentoDiferenteSiElPacienteEstaEnParo = false; }
     }
 
     public void intramuscular()
     {
-        FindObjectOfType<Rubrica>().c22 = false;
+        FindObjectOfType<Rubrica>().LaViaElegidaSiempreEsIntraVenosa = false;
         controlador.nuevoCiclo(5, "Poner medicamento");
     }
+    public void ActivarDesfribilador()
+    {
 
+    }
     public void desfibrilador()
     {
         if (FindObjectOfType<Crono>().getTiempoMinutos() <= 0.5)
         {
-            FindObjectOfType<Rubrica>().c8 = true;
+            FindObjectOfType<Rubrica>().ManipularDesfribiladorAntesDe30Segs = true;
         }
         anim.SetBool("Desfibrilador", true);
     }
@@ -131,11 +134,11 @@ public class Iniciarcompresiones : MonoBehaviour
         controlador.nuevoCiclo(4, "Se hizo una descarga");
         if (FindObjectOfType<Controladoracciones>().pulso == true)
         {
-            FindObjectOfType<Rubrica>().c13 = false;
+            FindObjectOfType<Rubrica>().NoSeAdministraDescargaSiElRitmoNoEsFV = false;
         }
         if (FindObjectOfType<Controladoracciones>().pulso == false)
         {
-            FindObjectOfType<Rubrica>().c11 = true;
+            FindObjectOfType<Rubrica>().SeAdministraDescargaSiElRitmoEsFV = true;
         }
         Debug.Log("se hizo una descarga");
     }
@@ -151,10 +154,10 @@ public class Iniciarcompresiones : MonoBehaviour
     {
         if (FindObjectOfType<Controladoracciones>().pulso == true)
         {
-            FindObjectOfType<Rubrica>().c26 = true;
+            FindObjectOfType<Rubrica>().SeTomaLaPresionArterialSoloSiHayPulso = true;
         } else
         {
-            FindObjectOfType<Rubrica>().c26 = false;
+            FindObjectOfType<Rubrica>().SeTomaLaPresionArterialSoloSiHayPulso = false;
         }
         anim.SetBool("Tomar presión", true);
     }
@@ -162,11 +165,11 @@ public class Iniciarcompresiones : MonoBehaviour
     {
         if (FindObjectOfType<Controladoracciones>().pulso == true)
         {
-            FindObjectOfType<Rubrica>().c27 = true;
+            FindObjectOfType<Rubrica>().SePoneSaturadorSoloSiHayPulso = true;
         }
         else
         {
-            FindObjectOfType<Rubrica>().c27 = false;
+            FindObjectOfType<Rubrica>().SePoneSaturadorSoloSiHayPulso = false;
         }
         anim.SetBool("Saturador", true);
     }
@@ -174,11 +177,11 @@ public class Iniciarcompresiones : MonoBehaviour
     {
         if (FindObjectOfType<Controladoracciones>().pulso == true)
         {
-            FindObjectOfType<Rubrica>().c28 = true;
+            FindObjectOfType<Rubrica>().SeTomaElectrocardiogramaSoloSiHayPulso = true;
         }
         else
         {
-            FindObjectOfType<Rubrica>().c28 = false;
+            FindObjectOfType<Rubrica>().SeTomaElectrocardiogramaSoloSiHayPulso = false;
         }
         anim.SetBool("Tórax", true);
     }

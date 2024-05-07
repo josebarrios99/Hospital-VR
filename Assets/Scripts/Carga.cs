@@ -29,7 +29,7 @@ public class Carga : MonoBehaviour
     {
         if (numero == 200)
         {
-            FindObjectOfType<Rubrica>().c10 = true;
+            FindObjectOfType<Rubrica>().SeElijeUnaCargaDe200JDespuesDeEncenderse = true;
             Debug.Log("peticio recargado");
         }
     }
