@@ -37,7 +37,19 @@ public class Carga : MonoBehaviour
     {
         numero = 0;
     }
- 
+    public void ValidarFrecuencia()
+    {
+        if (numero >= 100 && numero <= 120) {
+            FindObjectOfType<Rubrica>().CompresionesConFrecuencia100_120cpm = true;
+        }
+    }
+    public void ValidarProfundidad()
+    {
+        if (numero >= 5 && numero <= 6)
+        {
+            FindObjectOfType<Rubrica>().CompresionesConProfundidad5_6cm = true;
+        }
+    }
     public void EmpezarAumentar()
     {
         if (!aumentando)

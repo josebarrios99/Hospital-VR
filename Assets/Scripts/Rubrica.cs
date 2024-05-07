@@ -73,12 +73,12 @@ public class Rubrica : MonoBehaviour
     void Start()
     {
         inputDosis.onValueChanged.AddListener(delegate { ValidarInput(); });
-        inputFrecuencia.onValueChanged.AddListener(delegate { ValidarInputFrecuencia(); });
-        inputProfundidad.onValueChanged.AddListener(delegate { ValidarInputProfundidad(); });
+       // inputFrecuencia.onValueChanged.AddListener(delegate { ValidarInputFrecuencia(); });
+       // inputProfundidad.onValueChanged.AddListener(delegate { ValidarInputProfundidad(); });
         for (int i = 0; i < botonesPaciente.Length; i++)
         {
             int indiceBoton = i; // Captura el valor actual de 'i' para el delegado
-            botonesPaciente[i].onClick.AddListener(delegate { ValidarOrdenBoton(indiceBoton); });
+            botonesPaciente[i].onClick.AddListener(() => ValidarOrdenBoton(indiceBoton));
         }
         for (int i = 0; i < botonesDescarga.Length; i++)
         {
@@ -310,19 +310,15 @@ public class Rubrica : MonoBehaviour
         if (indiceBoton == secuenciaPaciente[indiceSiguientePaciente])
         {
             indiceSiguientePaciente++;
+            SeLlamoAlPacientePrimero = true;
 
             if (indiceSiguientePaciente >= secuenciaPaciente.Count)
             {
-                SeLlamoAlPacientePrimero = true;
+                
                 SeTomoElPulsoDeSegundo = true;
             }
         }
-        else
-        {
-            SeLlamoAlPacientePrimero = false;
-            SeTomoElPulsoDeSegundo = false;
-            indiceSiguientePaciente = 0;
-        }
+        
     }
     void ValidarOrdenBotonDescarga(int indiceBoton)
     {
