@@ -64,7 +64,7 @@ public class ObjetoInteractivo : MonoBehaviour
         if (controladorCompresiones.tienePulso())
         {
             textoPulsoFinal.SetActive(true);
-            
+            Invoke("DuracionTexto", 2);
             Debug.Log("tiene pulso");
 
         }

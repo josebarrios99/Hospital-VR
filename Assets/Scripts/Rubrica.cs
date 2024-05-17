@@ -14,6 +14,11 @@ public class Rubrica : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI textoCondiciones;
     //acciones
+    public Text porcentajeCondiciones;
+    private List<bool> condiciones;
+    private List<string> nombresCondiciones;
+
+
     public bool SeLlamoAlPacientePrimero,
         SeTomoElPulsoDeSegundo,
         CompresionesAntesDe30Segundos,
@@ -90,9 +95,44 @@ public class Rubrica : MonoBehaviour
             int indiceBoton = i; // Captura el valor actual de 'i' para el delegado
             botonesPulso[i].onClick.AddListener(delegate { ValidarOrdenBotonPulso(indiceBoton); });
         }
+        condiciones = new List<bool>(new bool[28]);
+        condiciones[6] = true; 
+        condiciones[12] = true;
+
+        nombresCondiciones = new List<string>
+        {
+        "SeLlamoAlPacientePrimero",
+        "SeTomoElPulsoDeSegundo",
+        "CompresionesAntesDe30Segundos",
+        "CompresionesConFrecuencia100_120cpm",
+        "CompresionesConProfundidad5_6cm",
+        "CompresionesPresentesEl60DelTiempo",
+        "CompresionesNoFueronIniciadasSiElPacienteTienePulso",
+        "ManipularDesfribiladorAntesDe30Segs",
+        "SeEnciendeDesfribiladorComoPrimeraOpcionDespuesDeManipularlo",
+        "SeElijeUnaCargaDe200JDespuesDeEncenderse",
+        "SeAdministraDescargaSiElRitmoEsFV",
+        "DespuesDeLaDescargaSeDejaDeManipularYSeInicianCompresiones",
+        "NoSeAdministraDescargaSiElRitmoNoEsFV = true",
+        "SiElRitmoNoEsFVLaPrimeraAccionEsDejarDeManipularYLuegoTomarPulso",
+        "VentilacionesIniciadasAntesDe45Segs",
+        "SeElijeUnaRelacion30_2",
+        "SePusoUnAccesoVenosoAntesDe45Segs",
+        "SeAdministraAdrenalinaComoPrimeraOpcion",
+        "SiAdministraAdrenalinaLaDosisEs1mg",
+        "SiAdministraAmiodaronaLaDosisEs300mg",
+        "SiAdministraLidocainaLaDosisEs70_100mg",
+        "LaViaElegidaSiempreEsIntraVenosa",
+        "SiAdministraAmiodaronaNoPuedeSerAntesDe6Mins",
+        "SiAdministraLidocainaNoPuedeSerAntesDe6Mins",
+        "NoSeAdministraNingunOtroMedicamentoDiferenteSiElPacienteEstaEnParo",
+        "SeTomaLaPresionArterialSoloSiHayPulso",
+        "SePoneSaturadorSoloSiHayPulso",
+        "SeTomaElectrocardiogramaSoloSiHayPulso"
+        };
     }
 
-    
+
     void Update()
     {
         ActualizarTextoCondiciones();
@@ -104,103 +144,103 @@ public class Rubrica : MonoBehaviour
 
         if (SeLlamoAlPacientePrimero == true)
         {
-            texto += "- Condición 1\n";
+            texto += "- Se Llamo Al Paciente Primero\n";
         }
         if (SeTomoElPulsoDeSegundo == true)
         {
-            texto += "- Condición 2\n";
+            texto += "- Se Tomo El Pulso De Segundo\n";
         }
         if (CompresionesAntesDe30Segundos == true)
         {
-            texto += "- Condición 3\n";
+            texto += "- Compresiones Antes De 30 Segundos\n";
         }
         if (CompresionesConFrecuencia100_120cpm == true)
         {
-            texto += "- Condición 4\n";
+            texto += "- Compresiones Con Frecuencia entre 100 y 120cpm\n";
         }
         if (CompresionesConProfundidad5_6cm == true)
         {
-            texto += "- Condición 5\n";
+            texto += "- Compresiones Con Profundidad entre 5 y 6cm\n";
         }
         if (CompresionesNoFueronIniciadasSiElPacienteTienePulso == true)
         {
-            texto += "- Condición 7\n";
+            texto += "- Compresiones No Fueron Iniciadas Si El Paciente Tiene Pulso\n";
         }
         if (ManipularDesfribiladorAntesDe30Segs == true)
         {
-            texto += "- Condición 8\n";
+            texto += "- Manipular Desfribilador Antes De 30Segs\n";
         }
         if (SeElijeUnaCargaDe200JDespuesDeEncenderse == true)
         {
-            texto += "- Condición 10\n";
+            texto += "- Se Elije Una Carga De 200J Despues De Encenderse\n";
         }
         if (SeAdministraDescargaSiElRitmoEsFV == true)
         {
-            texto += "- Condición 11\n";
+            texto += "- Se Administra Descarga Si El Ritmo Es FV\n";
         }
         if (NoSeAdministraDescargaSiElRitmoNoEsFV == true)
         {
-            texto += "- Condición 13\n";
+            texto += "- No Se Administra Descarga Si El Ritmo No Es FV\n";
         }
         if (SiElRitmoNoEsFVLaPrimeraAccionEsDejarDeManipularYLuegoTomarPulso == true)
         {
-            texto += "- Condición 14\n";
+            texto += "- Si El Ritmo No Es FV La Primera Accion Es Dejar De Manipular Y Luego Tomar Pulso\n";
         }
         if (VentilacionesIniciadasAntesDe45Segs == true)
         {
-            texto += "- Condición 15\n";
+            texto += "- Ventilaciones Iniciadas Antes De 45 Segs\n";
         }
         if (SeElijeUnaRelacion30_2 == true)
         {
-            texto += "- Condición 16\n";
+            texto += "- Se Elije Una Relacion 30/2\n";
         }
         if (SePusoUnAccesoVenosoAntesDe45Segs == true)
         {
-            texto += "- Condición 17\n";
+            texto += "- Se Puso Un Acceso Venoso Antes De 45 Segs\n";
         }
         if (SeAdministraAdrenalinaComoPrimeraOpcion == true)
         {
-            texto += "- Condición 18\n";
+            texto += "- Se Administra Adrenalina Como Primera Opcion\n";
         }
         if (SiAdministraAdrenalinaLaDosisEs1mg == true)
         {
-            texto += "- Condición 19\n";
+            texto += "- Si Administra Adrenalina La Dosis Es 1mg\n";
         }
         if (SiAdministraAmiodaronaLaDosisEs300mg == true)
         {
-            texto += "- Condición 20\n";
+            texto += "- Si Administra Amiodarona La Dosis Es 300mg\n";
         }
         if (SiAdministraLidocainaLaDosisEs70_100mg == true)
         {
-            texto += "- Condición 21\n";
+            texto += "- Si Administra Lidocaina La Dosis Es entre 70 y 100mg\n";
         }
         if (LaViaElegidaSiempreEsIntraVenosa == true)
         {
-            texto += "- Condición 22\n";
+            texto += "- La Via Elegida Siempre Es Intra Venosa\n";
         }
         if (SiAdministraAmiodaronaNoPuedeSerAntesDe6Mins == true)
         {
-            texto += "- Condición 23\n";
+            texto += "- Si Administra Amiodarona No Puede Ser Antes De 6Mins\n";
         }
         if (SiAdministraLidocainaNoPuedeSerAntesDe6Mins == true)
         {
-            texto += "- Condición 24\n";
+            texto += "- Si Administra Lidocaina No Puede Ser Antes De 6Mins\n";
         }
         if (NoSeAdministraNingunOtroMedicamentoDiferenteSiElPacienteEstaEnParo == true)
         {
-            texto += "- Condición 25\n";
+            texto += "- No Se Administra Ningun Otro Medicamento Diferente Si El Paciente Esta En Paro\n";
         }
         if (SeTomaLaPresionArterialSoloSiHayPulso == true)
         {
-            texto += "- Condición 26\n";
+            texto += "- Se Toma La Presion Arterial Solo Si Hay Pulso\n";
         }
         if (SePoneSaturadorSoloSiHayPulso == true)
         {
-            texto += "- Condición 27\n";
+            texto += "- Se Pone Saturador Solo Si Hay Pulso\n";
         }
         if (SeTomaElectrocardiogramaSoloSiHayPulso == true)
         {
-            texto += "- Condición 28\n";
+            texto += "- Se Toma Electrocardiograma Solo Si HayPulso\n";
         }
 
         // Mostrar el texto actualizado en el objeto de texto
@@ -242,7 +282,7 @@ public class Rubrica : MonoBehaviour
     }
     public void ValidarInputFrecuencia()
     {
-        Debug.Log("conejo");
+       
         int numeroIngresado;
 
         if (int.TryParse(inputFrecuencia.text, out numeroIngresado))
@@ -250,7 +290,7 @@ public class Rubrica : MonoBehaviour
             if (numeroIngresado >= frecuenciaMin && numeroIngresado <= frecuenciaMax)
             {
                 CompresionesConFrecuencia100_120cpm = true;
-                Debug.Log("conejo");
+                
             }
             else
             {

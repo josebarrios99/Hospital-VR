@@ -9,6 +9,7 @@ public class Controladoracciones : MonoBehaviour
     List<int> ordenCorrecto;
     List<string> ordenesTexto;
     public GameObject video;
+    public GameObject video2;
     public GameObject jugador;
     public GameObject pantallaFinal;
     public bool pulso;
@@ -21,6 +22,7 @@ public class Controladoracciones : MonoBehaviour
         jugador.GetComponent<PlayerController>().CantMove = true;
         jugador.GetComponent<PlayerController>().ActivarCursor();
         video.SetActive(false);
+        video2.SetActive(false);
         ordenes = new List<int>();
         ordenesTexto = new List<string>();
         ordenCorrecto = new List<int>()
@@ -83,6 +85,8 @@ public class Controladoracciones : MonoBehaviour
         pulso = true;
 
         video.SetActive(true);
+        video2.SetActive(true);
+
         ordenes.Clear();
         return calificacion;
     }
