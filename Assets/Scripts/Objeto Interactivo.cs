@@ -14,8 +14,11 @@ public class ObjetoInteractivo : MonoBehaviour
     public GameObject textoPulsoFinal;
     public GameObject textoRespuesta;
     public GameObject textoPresion;
+    public GameObject textoPresionFinal;
     public GameObject textoSaturacion;
+    public GameObject textoSaturacionFinal;
     public GameObject textoTorax;
+    public GameObject textoToraxFinal;
     public GameObject jugador;
     public GameObject mostrarObjeto;
     public GameObject posicionCompresiones;
@@ -24,7 +27,9 @@ public class ObjetoInteractivo : MonoBehaviour
     public Iniciarcompresiones controladorCompresiones;
     public Controladoracciones controlador;
 
-
+    public bool presionParo;
+    public bool toraxParo;
+    public bool saturacionParo;
 
 
     public int estado = 0;
@@ -77,18 +82,44 @@ public class ObjetoInteractivo : MonoBehaviour
     }
     public void TextoTorax()
     {
-        textoTorax.SetActive(true);
-        Invoke("DuracionTexto", 6);
+        if (toraxParo == false)
+        {
+            textoTorax.SetActive(true);
+            Invoke("DuracionTexto", 6);
+        }
+        if (toraxParo == true)
+        {
+            textoToraxFinal.SetActive(true); ;
+            Invoke("DuracionTexto", 6);
+        }
+        
     }
     public void TextoSaturacion()
     {
-        textoSaturacion.SetActive(true);
-        Invoke("DuracionTexto", 4);
+        if (saturacionParo == false)
+        {
+            textoSaturacion.SetActive(true);
+            Invoke("DuracionTexto", 4);
+        }
+        if (saturacionParo == true)
+        {
+            textoSaturacionFinal.SetActive(true);
+            Invoke("DuracionTexto", 4);
+        }
     }
     public void TextoPresion()
     {
-        textoPresion.SetActive(true);
-        Invoke("DuracionTexto", 4);
+        if (presionParo == false)
+        {
+            textoPresion.SetActive(true);
+            Invoke("DuracionTexto", 4);
+        }
+        if(presionParo == true)
+        {
+            textoPresionFinal.SetActive(true);
+            Invoke("DuracionTexto", 4);
+        }
+        
     }
     public void TextoRespuesta()
     {
@@ -148,10 +179,14 @@ public class ObjetoInteractivo : MonoBehaviour
     public void DuracionTexto()
     {
         textoPulso.SetActive(false);
+        textoPulsoFinal.SetActive(false);
         textoRespuesta.SetActive(false);
         textoPresion.SetActive(false);
         textoTorax.SetActive(false);
         textoSaturacion.SetActive(false);
+        textoPresionFinal.SetActive(false);
+        textoToraxFinal.SetActive(false);
+        textoSaturacionFinal.SetActive(false);
     }
    
 }

@@ -29,8 +29,8 @@ public class Carga : MonoBehaviour
     {
         if (numero == 200)
         {
-            FindObjectOfType<Rubrica>().SeElijeUnaCargaDe200JDespuesDeEncenderse = true;
-            Debug.Log("peticio recargado");
+            FindObjectOfType<Rubrica>().condiciones[9] = true;
+            
         }
     }
     public void ReiniciarCarga()
@@ -40,14 +40,14 @@ public class Carga : MonoBehaviour
     public void ValidarFrecuencia()
     {
         if (numero >= 100 && numero <= 120) {
-            FindObjectOfType<Rubrica>().CompresionesConFrecuencia100_120cpm = true;
+            FindObjectOfType<Rubrica>().condiciones[3] = true;
         }
     }
     public void ValidarProfundidad()
     {
         if (numero >= 5 && numero <= 6)
         {
-            FindObjectOfType<Rubrica>().CompresionesConProfundidad5_6cm = true;
+            FindObjectOfType<Rubrica>().condiciones[4] = true;
         }
     }
     public void EmpezarAumentar()

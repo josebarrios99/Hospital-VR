@@ -84,6 +84,10 @@ public class Controladoracciones : MonoBehaviour
 
         pulso = true;
 
+        FindObjectOfType<ObjetoInteractivo>().toraxParo = true;
+        FindObjectOfType<ObjetoInteractivo>().presionParo = true;
+        FindObjectOfType<ObjetoInteractivo>().saturacionParo = true;
+
         video.SetActive(true);
         video2.SetActive(true);
 
