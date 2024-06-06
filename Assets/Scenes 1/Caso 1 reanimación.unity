@@ -43016,11 +43016,11 @@ MonoBehaviour:
   textoPulsoFinal: {fileID: 300637816}
   textoRespuesta: {fileID: 349795535}
   textoPresion: {fileID: 115073753}
-  textoPresionFinal: {fileID: 0}
+  textoPresionFinal: {fileID: 623239534}
   textoSaturacion: {fileID: 1591674221}
-  textoSaturacionFinal: {fileID: 0}
+  textoSaturacionFinal: {fileID: 1516914856}
   textoTorax: {fileID: 1646230395}
-  textoToraxFinal: {fileID: 0}
+  textoToraxFinal: {fileID: 1567572796}
   jugador: {fileID: 21878731}
   mostrarObjeto: {fileID: 1568512905}
   posicionCompresiones: {fileID: 0}
