@@ -12,13 +12,14 @@ public class Controladoracciones : MonoBehaviour
     public GameObject video2;
     public GameObject jugador;
     public GameObject pantallaFinal;
-    public bool pulso;
 
-    
+    [SerializeField] private ControladorRubrica _controladorRubrica; 
+    public bool pulso;
     
     // Start is called before the first frame update
     void Start()
     {
+        _controladorRubrica = ControladorRubrica.instance;
         jugador.GetComponent<PlayerController>().CantMove = true;
         jugador.GetComponent<PlayerController>().ActivarCursor();
         video.SetActive(false);
@@ -49,7 +50,6 @@ public class Controladoracciones : MonoBehaviour
             {
                 jugador.GetComponent<PlayerController>().CantMove = true;
                 pantallaFinal.SetActive(true);
-                
             }
         }
     }

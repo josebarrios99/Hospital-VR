@@ -12,9 +12,12 @@ public class ControlCompresiones : MonoBehaviour
     private bool restar = false;
     private bool aumentando = false;
     private bool disminuyendo = false;
+    
+    [SerializeField] private ControladorRubrica _controladorRubrica;
     // Start is called before the first frame update
     void Start()
     {
+        _controladorRubrica = ControladorRubrica.instance;
         ActualizarTexto();
     }
     void Update()
@@ -31,7 +34,7 @@ public class ControlCompresiones : MonoBehaviour
     }
     void ActualizarTexto()
     {
-        // Actualizar el texto con el número actual
+        // Actualizar el texto con el nï¿½mero actual
         texto.text = "" + numero.ToString();
     }
     
@@ -43,14 +46,14 @@ public class ControlCompresiones : MonoBehaviour
     public void ValidarFrecuencia()
     {
         if (numero >= 100 && numero <= 120) {
-            FindObjectOfType<Rubrica>().condiciones[3] = true;
+            _controladorRubrica.ActualizarRubrica(3);
         }
     }
     public void ValidarProfundidad()
     {
         if (numero >= 5 && numero <= 6)
         {
-            FindObjectOfType<Rubrica>().condiciones[4] = true;
+            _controladorRubrica.ActualizarRubrica(4);
         }
     }
     public void EmpezarAumentar()
@@ -71,7 +74,7 @@ public class ControlCompresiones : MonoBehaviour
     {
         while (aumentando)
         {
-            // Incrementar el número y actualizar el texto
+            // Incrementar el nï¿½mero y actualizar el texto
             if (numero < 360)
             {
                 if (aumentaEn10==false)
@@ -87,7 +90,7 @@ public class ControlCompresiones : MonoBehaviour
                 
             }
 
-            // Pausa para evitar un aumento muy rápido
+            // Pausa para evitar un aumento muy rï¿½pido
             yield return new WaitForSeconds(0.15f);
         }
     }
@@ -110,7 +113,7 @@ public class ControlCompresiones : MonoBehaviour
     {
         while (disminuyendo)
         {
-            // Incrementar el número y actualizar el texto
+            // Incrementar el nï¿½mero y actualizar el texto
             if (numero > 0)
             {
                 if (aumentaEn10 == false)
@@ -126,7 +129,7 @@ public class ControlCompresiones : MonoBehaviour
             }
 
 
-            // Pausa para evitar un aumento muy rápido
+            // Pausa para evitar un aumento muy rï¿½pido
             yield return new WaitForSeconds(0.15f);
         }
     }

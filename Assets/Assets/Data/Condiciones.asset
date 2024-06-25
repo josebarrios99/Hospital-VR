@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Condiciones
+  m_EditorClassIdentifier: Assembly-CSharp::ListaCondiciones
+  Condiciones:
+  - id: 0
+    descripcion: Se llamo al paciente primero
+    success: 0
+  - id: 1
+    descripcion: Se tomo el pulso de segundo
+    success: 0
+  - id: 2
+    descripcion: Compresiones antes de 30 segundos
+    success: 0
+  - id: 3
+    descripcion: Compresiones con frecuencia entre 100 y 120cpm
+    success: 0
+  - id: 4
+    descripcion: Compresiones con profundidad entre 5 y 6cm
+    success: 0
+  - id: 5
+    descripcion: Compresiones presentes el 60% del tiempo
+    success: 0
+  - id: 6
+    descripcion: Compresiones no fueron iniciadas si el paciente tiene pulso
+    success: 1
+  - id: 7
+    descripcion: Manipular desfribilador antes de 30 segundos
+    success: 0
+  - id: 8
+    descripcion: Se enciende desfribilador como primera opcion despues de manipularlo
+    success: 0
+  - id: 9
+    descripcion: Se elije una carga de 200J despues de encenderse
+    success: 0
+  - id: 10
+    descripcion: Se administra descarga si el ritmo es FV
+    success: 0
+  - id: 11
+    descripcion: Despues de la descarga se deja de manipular y se inician compresiones
+    success: 0
+  - id: 12
+    descripcion: No se administra descarga si el ritmo no es FV
+    success: 1
+  - id: 13
+    descripcion: Si el ritmo no es FV la primera accion es dejar de manipular y luego
+      tomar pulso
+    success: 0
+  - id: 14
+    descripcion: Ventilaciones iniciadas antes de 45 segundos
+    success: 0
+  - id: 15
+    descripcion: Se elije una relacion de 30:2
+    success: 0
+  - id: 16
+    descripcion: Se puso un acceso venoso antes de 45 segundos
+    success: 0
+  - id: 17
+    descripcion: Se administra adrenalina como primera opcion
+    success: 0
+  - id: 18
+    descripcion: Si administra adrenalina la dosis es 1mg
+    success: 0
+  - id: 19
+    descripcion: Si administra amiodarona la dosis es 300mg
+    success: 0
+  - id: 20
+    descripcion: Si administra lidocaina la dosis es entre 70 y 100mg
+    success: 0
+  - id: 21
+    descripcion: La via elegida siempre es intra venosa
+    success: 0
+  - id: 22
+    descripcion: Si administra amiodarona no puede ser antes de 6 minutos
+    success: 0
+  - id: 23
+    descripcion: Si administra lidocaina no puede ser antes de 6 minutos
+    success: 0
+  - id: 24
+    descripcion: No se administra ningun otro medicamento diferente si el paciente
+      esta en paro
+    success: 0
+  - id: 25
+    descripcion: Se toma la presion arterial solo si hay pulso
+    success: 0
+  - id: 26
+    descripcion: Se pone saturador solo si hay pulso
+    success: 0
+  - id: 27
+    descripcion: Se toma electrocardiograma solo si hay pulso
+    success: 0

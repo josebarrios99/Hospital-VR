@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class Crono : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI textoCrono;
     [SerializeField] private float tiempo;
+    [SerializeField] private bool countDown;
 
     private int tiempoMinutos, tiempoSegundos, tiempoDecimas;
 
@@ -14,10 +16,19 @@ public class Crono : MonoBehaviour
     {
         return tiempoMinutos;
     }
-    
-    void Cronometro()
+
+    private void Start()
     {
-        tiempo += Time.deltaTime;
+        if(countDown)
+            tiempo = 720f;
+    }
+
+    void Cronometro()
+    {   
+        if(countDown)
+            tiempo -= Time.deltaTime;
+        else
+            tiempo += Time.deltaTime;
 
         tiempoMinutos = Mathf.FloorToInt (tiempo / 60);
         tiempoSegundos = Mathf.FloorToInt (tiempo % 60);

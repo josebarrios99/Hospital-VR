@@ -9,15 +9,15 @@ public class Iniciarcompresiones : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] Controladoracciones controlador;
 
-    
+    [SerializeField] private ControladorRubrica _controladorRubrica;
 
     // Start is called before the first frame update
     void Start()
     {
+        _controladorRubrica = ControladorRubrica.instance;
         anim = gameObject.GetComponent<Animator>();
         controlador = GameObject.Find("Controlador").GetComponent<Controladoracciones>();
     }
-    
 
     // Update is called once per frame
 
@@ -34,11 +34,11 @@ public class Iniciarcompresiones : MonoBehaviour
     {
         if (FindObjectOfType<Crono>().getTiempoMinutos() <= 0.5)
         {
-            FindObjectOfType<Rubrica>().condiciones[2] = true;
+            _controladorRubrica.ActualizarRubrica(2);
         }
         if (FindObjectOfType<Controladoracciones>().pulso == true)
         {
-            FindObjectOfType<Rubrica>().condiciones[6] = false;
+            _controladorRubrica.ActualizarRubrica(6, false);
         }
         anim.SetBool("Iniciar compresiones", true);
         controlador.nuevoCiclo(4, "Iniciar compresiones");
@@ -72,7 +72,7 @@ public class Iniciarcompresiones : MonoBehaviour
     {
         if (FindObjectOfType<Crono>().getTiempoMinutos() <= 0.75)
         {
-            FindObjectOfType<Rubrica>().condiciones[14] = true;
+            _controladorRubrica.ActualizarRubrica(14);
         }
         anim.SetBool("Poner mascarilla", true);
         controlador.nuevoCiclo(3, "Iniciar ventilaciones");
@@ -84,59 +84,59 @@ public class Iniciarcompresiones : MonoBehaviour
 
     public void ponerMedicamento()
     {
-        FindObjectOfType<Rubrica>().condiciones[21] = true;
+        _controladorRubrica.ActualizarRubrica(21);
         anim.SetBool("Poner acceso venoso", true);
         
 
         if (FindObjectOfType<Rubrica>().adrenalina == true)
         {
-            controlador.nuevoCiclo(5, "Se administró adrenalina");
+            controlador.nuevoCiclo(5, "Se administrï¿½ adrenalina");
         }
         if (FindObjectOfType<Rubrica>().atropina == true)
         {
-            controlador.nuevoCiclo(5, "Se administró atropina");
+            controlador.nuevoCiclo(5, "Se administrï¿½ atropina");
         }
         if (FindObjectOfType<Rubrica>().noradrenalina == true)
         {
-            controlador.nuevoCiclo(5, "Se administró noradrenalina");
+            controlador.nuevoCiclo(5, "Se administrï¿½ noradrenalina");
         }
         if (FindObjectOfType<Rubrica>().amiodarona == true)
         {
-            controlador.nuevoCiclo(5, "Se administró amiodarona");
+            controlador.nuevoCiclo(5, "Se administrï¿½ amiodarona");
         }
         if (FindObjectOfType<Rubrica>().lidocaina == true)
         {
-            controlador.nuevoCiclo(5, "Se administró lidocaina");
+            controlador.nuevoCiclo(5, "Se administrï¿½ lidocaina");
         }
         if (FindObjectOfType<Rubrica>().sulfatoDeMagnesio == true)
         {
-            controlador.nuevoCiclo(5, "Se administró sulfatoDeMagnesio");
+            controlador.nuevoCiclo(5, "Se administrï¿½ sulfatoDeMagnesio");
         }
 
         if (FindObjectOfType<Crono>().getTiempoMinutos() <= 2.5)
         {
-            FindObjectOfType<Rubrica>().condiciones[16] = true;
+            _controladorRubrica.ActualizarRubrica(16);
         }
         if (FindObjectOfType<Crono>().getTiempoMinutos() <= 6)
         {
             if (FindObjectOfType<Rubrica>().amiodarona == true)
             {
-                FindObjectOfType<Rubrica>().condiciones[22] = true;
+                _controladorRubrica.ActualizarRubrica(22);
             }
             if (FindObjectOfType<Rubrica>().lidocaina == true)
             {
-                FindObjectOfType<Rubrica>().condiciones[23] = true;
+                _controladorRubrica.ActualizarRubrica(23);
             }
         }
         if (FindObjectOfType<Rubrica>().lidocaina == true || FindObjectOfType<Rubrica>().amiodarona == true || FindObjectOfType<Rubrica>().adrenalina == true)
-        {
-            FindObjectOfType<Rubrica>().condiciones[24] = true;
-        } else { FindObjectOfType<Rubrica>().condiciones[24] = false; }
+            _controladorRubrica.ActualizarRubrica(24);
+        else 
+            _controladorRubrica.ActualizarRubrica(24,false);
     }
 
     public void intramuscular()
     {
-        FindObjectOfType<Rubrica>().condiciones[21] = false;
+        _controladorRubrica.ActualizarRubrica(21,false);
         controlador.nuevoCiclo(5, "Poner medicamento");
     }
     public void ActivarDesfribilador()
@@ -147,7 +147,7 @@ public class Iniciarcompresiones : MonoBehaviour
     {
         if (FindObjectOfType<Crono>().getTiempoMinutos() <= 0.5)
         {
-            FindObjectOfType<Rubrica>().condiciones[7] = true;
+            _controladorRubrica.ActualizarRubrica(7);
         }
         anim.SetBool("Desfibrilador", true);
     }
@@ -160,11 +160,11 @@ public class Iniciarcompresiones : MonoBehaviour
         controlador.nuevoCiclo(4, "Se hizo una descarga");
         if (FindObjectOfType<Controladoracciones>().pulso == true)
         {
-            FindObjectOfType<Rubrica>().condiciones[12] = false;
+            _controladorRubrica.ActualizarRubrica(12,false);
         }
         if (FindObjectOfType<Controladoracciones>().pulso == false)
         {
-            FindObjectOfType<Rubrica>().condiciones[10] = true;
+            _controladorRubrica.ActualizarRubrica(10);
         }
         Debug.Log("se hizo una descarga");
     }
@@ -180,22 +180,22 @@ public class Iniciarcompresiones : MonoBehaviour
     {
         if (FindObjectOfType<Controladoracciones>().pulso == true)
         {
-            FindObjectOfType<Rubrica>().condiciones[25] = true;
+            _controladorRubrica.ActualizarRubrica(25);
         } else
         {
-            FindObjectOfType<Rubrica>().condiciones[25] = false;
+            _controladorRubrica.ActualizarRubrica(25,false);
         }
-        anim.SetBool("Tomar presión", true);
+        anim.SetBool("Tomar presiï¿½n", true);
     }
     public void ponerSaturador()
     {
         if (FindObjectOfType<Controladoracciones>().pulso == true)
         {
-            FindObjectOfType<Rubrica>().condiciones[26] = true;
+            _controladorRubrica.ActualizarRubrica(26);
         }
         else
         {
-            FindObjectOfType<Rubrica>().condiciones[26] = false;
+            _controladorRubrica.ActualizarRubrica(26,false);
         }
         anim.SetBool("Saturador", true);
     }
@@ -203,12 +203,12 @@ public class Iniciarcompresiones : MonoBehaviour
     {
         if (FindObjectOfType<Controladoracciones>().pulso == true)
         {
-            FindObjectOfType<Rubrica>().condiciones[27] = true;
+            _controladorRubrica.ActualizarRubrica(27);
         }
         else
         {
-            FindObjectOfType<Rubrica>().condiciones[27] = false;
+            _controladorRubrica.ActualizarRubrica(27,false);
         }
-        anim.SetBool("Tórax", true);
+        anim.SetBool("Tï¿½rax", true);
     }
 }

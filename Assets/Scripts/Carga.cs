@@ -11,9 +11,13 @@ public class Carga : MonoBehaviour
     private bool restar = false;
     private bool aumentando = false;
     private bool disminuyendo = false;
+    
+    [SerializeField] private ControladorRubrica _controladorRubrica;
+    
     // Start is called before the first frame update
     void Start()
     {
+        _controladorRubrica = ControladorRubrica.instance;
         ActualizarTexto();
     }
     void Update()
@@ -22,15 +26,14 @@ public class Carga : MonoBehaviour
     }
     void ActualizarTexto()
     {
-        // Actualizar el texto con el número actual
+        // Actualizar el texto con el nï¿½mero actual
         texto.text = "" + numero.ToString();
     }
     public void ValidarCarga()
     {
         if (numero == 200)
         {
-            FindObjectOfType<Rubrica>().condiciones[9] = true;
-            
+            _controladorRubrica.ActualizarRubrica(9);
         }
     }
     public void ReiniciarCarga()
@@ -40,14 +43,14 @@ public class Carga : MonoBehaviour
     public void ValidarFrecuencia()
     {
         if (numero >= 100 && numero <= 120) {
-            FindObjectOfType<Rubrica>().condiciones[3] = true;
+            _controladorRubrica.ActualizarRubrica(3);
         }
     }
     public void ValidarProfundidad()
     {
         if (numero >= 5 && numero <= 6)
         {
-            FindObjectOfType<Rubrica>().condiciones[4] = true;
+            _controladorRubrica.ActualizarRubrica(4);
         }
     }
     public void EmpezarAumentar()
@@ -68,14 +71,14 @@ public class Carga : MonoBehaviour
     {
         while (aumentando)
         {
-            // Incrementar el número y actualizar el texto
+            // Incrementar el nï¿½mero y actualizar el texto
             if (numero < 360)
             {
                 numero += 10;
                 ActualizarTexto();
             }
 
-            // Pausa para evitar un aumento muy rápido
+            // Pausa para evitar un aumento muy rï¿½pido
             yield return new WaitForSeconds(0.08f);
         }
     }
@@ -98,14 +101,14 @@ public class Carga : MonoBehaviour
     {
         while (disminuyendo)
         {
-            // Incrementar el número y actualizar el texto
+            // Incrementar el nï¿½mero y actualizar el texto
             if (numero > 0)
             {
                 numero -= 10;
                 ActualizarTexto();
             }
 
-            // Pausa para evitar un aumento muy rápido
+            // Pausa para evitar un aumento muy rï¿½pido
             yield return new WaitForSeconds(0.08f);
         }
     }
