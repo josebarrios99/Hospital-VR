@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
+using FixedUpdate = UnityEngine.PlayerLoop.FixedUpdate;
 
 public class Iniciarcompresiones : MonoBehaviour
 {
@@ -14,14 +15,28 @@ public class Iniciarcompresiones : MonoBehaviour
     [SerializeField] private ControladorRubrica _controladorRubrica;
 
     [SerializeField] private Crono ControladorTiempo;
-
+    
+    private bool CompresionesIniciadas = false;
+    private float TiempoCompresiones = 0.0f;
     void Start()
     {
         _controladorRubrica = ControladorRubrica.instance;
         anim = gameObject.GetComponent<Animator>();
         controlador = GameObject.Find("Controlador").GetComponent<Controladoracciones>();
     }
-
+    
+    private void FixedUpdate()
+    {
+        if (CompresionesIniciadas && !controlador.pulso)
+        {
+            TiempoCompresiones += Time.deltaTime;
+            float TimeToUpdate = 360f;
+            if (TiempoCompresiones >= TimeToUpdate)
+            {
+                _controladorRubrica.ActualizarRubrica(5);
+            }
+        }
+    }
     // Update is called once per frame
 
     public bool tienePulso()
@@ -45,6 +60,8 @@ public class Iniciarcompresiones : MonoBehaviour
         {
             _controladorRubrica.ActualizarRubrica(6, false);
         }
+
+        CompresionesIniciadas = true;
         anim.SetBool("Iniciar compresiones", true);
         // controlador.nuevoCiclo(4, "Iniciar compresiones");
         
@@ -52,14 +69,17 @@ public class Iniciarcompresiones : MonoBehaviour
     public void iniciarCompresiones2()
     {
         anim.SetBool("Iniciar compresiones 2", true);
+        CompresionesIniciadas = true;
         // controlador.nuevoCiclo(4, "Iniciar compresiones");
     }
     public void detenerCompresiones()
     {
+        CompresionesIniciadas = false;
         anim.SetBool("Iniciar compresiones", false);
     }
     public void detenerCompresiones2()
     {
+        CompresionesIniciadas = false;
         anim.SetBool("Iniciar compresiones 2", false);
     }
     public void aumentarVelocidad()

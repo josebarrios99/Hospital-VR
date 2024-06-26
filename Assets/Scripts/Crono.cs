@@ -10,8 +10,14 @@ public class Crono : MonoBehaviour
     [SerializeField] private float tiempo;
     [SerializeField] private bool countDown;
 
+    [SerializeField] private float Maxtime = 720f;
+    
     private int tiempoMinutos, tiempoSegundos, tiempoDecimas;
 
+    public float GetMaxTime()
+    {
+        return Maxtime;
+    }
     public int getTiempoMinutos()
     {
         return tiempoMinutos;
@@ -23,7 +29,7 @@ public class Crono : MonoBehaviour
     private void Start()
     {
         if(countDown)
-            tiempo = 720f;
+            tiempo = Maxtime;
     }
 
     void Cronometro()
