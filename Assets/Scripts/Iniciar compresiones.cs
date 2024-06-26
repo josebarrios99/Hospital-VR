@@ -116,7 +116,13 @@ public class Iniciarcompresiones : MonoBehaviour
     {
         anim.SetBool("Poner mascarilla", false);
     }
-
+    public void ponerAccesoVenoso()
+    {
+        if (ControladorTiempo.getTiempoSec() <= 45f)
+        {
+            _controladorRubrica.ActualizarRubrica(16);
+        }
+    }
     public void ponerMedicamento()
     {
         _controladorRubrica.ActualizarRubrica(21);
@@ -148,10 +154,7 @@ public class Iniciarcompresiones : MonoBehaviour
         //     controlador.nuevoCiclo(5, "Se administr� sulfatoDeMagnesio");
         // }
 
-        if (ControladorTiempo.getTiempoMinutos() <= 2.5)
-        {
-            _controladorRubrica.ActualizarRubrica(16);
-        }
+        
         if (ControladorTiempo.getTiempoMinutos() <= 6)
         {
             if (FindObjectOfType<Rubrica>().amiodarona == true)
