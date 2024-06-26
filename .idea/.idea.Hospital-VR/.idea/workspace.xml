@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6259c415-7f52-49d7-be91-5a9802bba8b8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Hospital-VR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hospital-VR/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes 1/Caso 1 reanimación.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes 1/Caso 1 reanimación.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Carga.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Carga.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controladores/ControladorRubrica.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controladores/ControladorRubrica.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Iniciar compresiones.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Iniciar compresiones.cs" afterDir="false" />
-    </list>
+    <list default="true" id="6259c415-7f52-49d7-be91-5a9802bba8b8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

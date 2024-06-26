@@ -19,7 +19,7 @@ public class ControladorRubrica : MonoBehaviour
     public int UltimaCondicion => ultimaCondicion;
 
     private bool descarga = false;
-    public bool Descarga => Descarga;
+    public bool Descarga => descarga;
     
     private List<CondicionUI> Condiciones = new List<CondicionUI>();
     private void Awake()
