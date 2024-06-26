@@ -8,6 +8,7 @@ TagManager:
   - Lista
   - Paciente
   - Objeto Interactivo
+  - RealCrono
   layers:
   - Default
   - TransparentFX

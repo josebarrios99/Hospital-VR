@@ -1,21 +1,29 @@
 using System;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 [Serializable]
 public struct Condicion
 {
     [SerializeField] private int id;
+    [SerializeField] private string descripcion;
+    [SerializeField] private bool success;
+    [SerializeField] private bool mistake;
 
     public int ID => id;
     public string Descripcion => descripcion;
     public bool Success => success;
 
-    [SerializeField] private string descripcion;
-    [SerializeField] private bool success;
-
-    public void OnSuccess(bool ItsSuccess)
+    public void OnSuccess(bool ItsSuccess = true)
     {
-        success = ItsSuccess;
+        if(!mistake)
+            success = ItsSuccess;
+    }
+
+    public void OnMistake()
+    {
+        mistake = true;
+        success = false;
     }
 }
 
@@ -31,6 +39,8 @@ public class ListaCondiciones : ScriptableObject
     public void UpdateCondicion(int Index, bool Success = true)
     {
         Condicion NewState = Condiciones[Index];
+        if(!Success)
+            NewState.OnMistake();
         NewState.OnSuccess(Success);
         Condiciones[Index] = NewState;
     }

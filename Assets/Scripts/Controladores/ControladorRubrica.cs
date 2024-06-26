@@ -36,6 +36,8 @@ public class ControladorRubrica : MonoBehaviour
 
     public void ActualizarRubrica(int Index, bool Success = true)
     {
+        if(!Success)
+            
         RubricaSo.UpdateCondicion(Index, Success);
         UpdateRubrica(Index);
     }

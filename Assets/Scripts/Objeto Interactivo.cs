@@ -116,7 +116,6 @@ public class ObjetoInteractivo : MonoBehaviour
             textoPresionFinal.SetActive(true);
             Invoke("DuracionTexto", 4);
         }
-        
     }
     public void TextoRespuesta()
     {

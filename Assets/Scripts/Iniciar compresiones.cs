@@ -14,11 +14,6 @@ public class Iniciarcompresiones : MonoBehaviour
     [SerializeField] private ControladorRubrica _controladorRubrica;
 
     [SerializeField] private Crono ControladorTiempo;
-    // Start is called before the first frame update
-    private void Awake()
-    {
-        ControladorTiempo = FindObjectOfType<Crono>();
-    }
 
     void Start()
     {
