@@ -41,7 +41,7 @@ public class Iniciarcompresiones : MonoBehaviour
     }
     public void iniciarCompresiones()
     {
-        if (ControladorTiempo.getTiempoMinutos() <= 0.5)
+        if (ControladorTiempo.getTiempoSec() <= 30f)
         {
             Debug.Log($"Compresiones  Correctas, Current Time: {ControladorTiempo.getTiempoMinutos()}");
             _controladorRubrica.ActualizarRubrica(2);
@@ -56,6 +56,15 @@ public class Iniciarcompresiones : MonoBehaviour
     }
     public void iniciarCompresiones2()
     {
+        if (ControladorTiempo.getTiempoSec() <= 30f)
+        {
+            Debug.Log($"Compresiones  Correctas, Current Time: {ControladorTiempo.getTiempoMinutos()}");
+            _controladorRubrica.ActualizarRubrica(2);
+        }
+        if (FindObjectOfType<Controladoracciones>().pulso == true)
+        {
+            _controladorRubrica.ActualizarRubrica(6, false);
+        }
         anim.SetBool("Iniciar compresiones 2", true);
         // controlador.nuevoCiclo(4, "Iniciar compresiones");
     }

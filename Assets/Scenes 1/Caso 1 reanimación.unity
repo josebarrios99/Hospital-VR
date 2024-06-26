@@ -7592,6 +7592,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   controlador: {fileID: 0}
   _controladorRubrica: {fileID: 0}
+  ControladorTiempo: {fileID: 0}
 --- !u!114 &444815179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14472,6 +14473,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   controlador: {fileID: 0}
   _controladorRubrica: {fileID: 0}
+  ControladorTiempo: {fileID: 0}
 --- !u!1 &550485574
 GameObject:
   m_ObjectHideFlags: 0
@@ -17207,6 +17209,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   controlador: {fileID: 0}
   _controladorRubrica: {fileID: 0}
+  ControladorTiempo: {fileID: 0}
 --- !u!114 &581991971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20197,6 +20200,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   controlador: {fileID: 0}
   _controladorRubrica: {fileID: 0}
+  ControladorTiempo: {fileID: 0}
 --- !u!114 &629145342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28118,6 +28122,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   controlador: {fileID: 0}
   _controladorRubrica: {fileID: 0}
+  ControladorTiempo: {fileID: 0}
 --- !u!114 &834319094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30791,6 +30796,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   controlador: {fileID: 0}
   _controladorRubrica: {fileID: 0}
+  ControladorTiempo: {fileID: 0}
 --- !u!114 &873616669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31318,7 +31324,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897369686}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
@@ -33820,6 +33826,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   controlador: {fileID: 0}
   _controladorRubrica: {fileID: 0}
+  ControladorTiempo: {fileID: 0}
 --- !u!1 &964331424
 GameObject:
   m_ObjectHideFlags: 0
@@ -38779,6 +38786,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   controlador: {fileID: 0}
   _controladorRubrica: {fileID: 0}
+  ControladorTiempo: {fileID: 0}
 --- !u!82 &1213792496
 AudioSource:
   m_ObjectHideFlags: 0
@@ -43481,6 +43489,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   controlador: {fileID: 1325493397}
   _controladorRubrica: {fileID: 0}
+  ControladorTiempo: {fileID: 0}
 --- !u!1 &1396589166
 GameObject:
   m_ObjectHideFlags: 0
@@ -46064,6 +46073,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   controlador: {fileID: 0}
   _controladorRubrica: {fileID: 0}
+  ControladorTiempo: {fileID: 0}
 --- !u!114 &1439647960
 MonoBehaviour:
   m_ObjectHideFlags: 0
