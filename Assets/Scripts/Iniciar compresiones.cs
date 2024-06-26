@@ -53,7 +53,6 @@ public class Iniciarcompresiones : MonoBehaviour
     {
         if (ControladorTiempo.getTiempoSec() <= 30f)
         {
-            Debug.Log($"Compresiones  Correctas, Current Time: {ControladorTiempo.getTiempoMinutos()}");
             _controladorRubrica.ActualizarRubrica(2);
         }
         if (FindObjectOfType<Controladoracciones>().pulso == true)
@@ -70,7 +69,6 @@ public class Iniciarcompresiones : MonoBehaviour
     {
         if (ControladorTiempo.getTiempoSec() <= 30f)
         {
-            Debug.Log($"Compresiones  Correctas, Current Time: {ControladorTiempo.getTiempoMinutos()}");
             _controladorRubrica.ActualizarRubrica(2);
         }
         if (FindObjectOfType<Controladoracciones>().pulso == true)
