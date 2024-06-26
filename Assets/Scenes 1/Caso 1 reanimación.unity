@@ -4846,6 +4846,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2140716342}
+        m_TargetAssemblyTypeName: Carga, Assembly-CSharp
+        m_MethodName: InteractWithObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &311832556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14636,10 +14648,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1108206798}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2140716342}
+        m_TargetAssemblyTypeName: Carga, Assembly-CSharp
+        m_MethodName: InteractWithObject
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -14736,6 +14748,30 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ObjetoInteractivo, Assembly-CSharp
         m_MethodName: definirEstado
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1213792488}
+        m_TargetAssemblyTypeName: ObjetoInteractivo, Assembly-CSharp
+        m_MethodName: definirEstado
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2140716342}
+        m_TargetAssemblyTypeName: Carga, Assembly-CSharp
+        m_MethodName: Descarga
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -15118,7 +15154,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 568107054}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1992325835}
+        m_TargetAssemblyTypeName: Carga, Assembly-CSharp
+        m_MethodName: InteractWithObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &568107054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21845,7 +21893,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 736052091}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1992325835}
+        m_TargetAssemblyTypeName: Carga, Assembly-CSharp
+        m_MethodName: InteractWithObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &736052091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24340,6 +24400,7 @@ MonoBehaviour:
   textoCrono: {fileID: 765691505}
   tiempo: 0
   countDown: 0
+  Maxtime: 720
 --- !u!114 &765691505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24973,7 +25034,19 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2140716342}
         m_TargetAssemblyTypeName: Carga, Assembly-CSharp
-        m_MethodName: ValidarCarga
+        m_MethodName: InteractWithObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 792040151}
+        m_TargetAssemblyTypeName: Sonido, Assembly-CSharp
+        m_MethodName: Reproducir
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25894,7 +25967,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807525584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -306}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25905,7 +25978,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 565, y: 0}
+  m_AnchoredPosition: {x: -313.99997, y: 59.99997}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &809927722
@@ -34652,6 +34725,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1992325835}
+        m_TargetAssemblyTypeName: Carga, Assembly-CSharp
+        m_MethodName: TurnOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1992325835}
+        m_TargetAssemblyTypeName: Carga, Assembly-CSharp
+        m_MethodName: InteractWithObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1015086669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34977,6 +35074,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2140716342}
+        m_TargetAssemblyTypeName: Carga, Assembly-CSharp
+        m_MethodName: InteractWithObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -39091,9 +39200,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1213792494}
-        m_TargetAssemblyTypeName: Iniciarcompresiones, Assembly-CSharp
-        m_MethodName: descarga
+      - m_Target: {fileID: 1992325835}
+        m_TargetAssemblyTypeName: Carga, Assembly-CSharp
+        m_MethodName: InteractWithObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39202,6 +39311,30 @@ MonoBehaviour:
       - m_Target: {fileID: 1439647959}
         m_TargetAssemblyTypeName: Iniciarcompresiones, Assembly-CSharp
         m_MethodName: detenerDesfibrilador2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1439647959}
+        m_TargetAssemblyTypeName: Iniciarcompresiones, Assembly-CSharp
+        m_MethodName: detenerDesfibrilador2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1992325835}
+        m_TargetAssemblyTypeName: Carga, Assembly-CSharp
+        m_MethodName: Descarga
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -53042,6 +53175,7 @@ MonoBehaviour:
   textoCrono: {fileID: 1855764242}
   tiempo: 0
   countDown: 1
+  Maxtime: 720
 --- !u!114 &1855764242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54358,9 +54492,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 949421046}
-        m_TargetAssemblyTypeName: Iniciarcompresiones, Assembly-CSharp
-        m_MethodName: detenerVentilaciones
+      - m_Target: {fileID: 1992325835}
+        m_TargetAssemblyTypeName: Carga, Assembly-CSharp
+        m_MethodName: InteractWithObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -54373,6 +54507,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1933086310}
         m_TargetAssemblyTypeName: Sonido, Assembly-CSharp
         m_MethodName: Reproducir
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2140716342}
+        m_TargetAssemblyTypeName: Carga, Assembly-CSharp
+        m_MethodName: ValidarCarga
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -55320,6 +55466,30 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2140716342}
+        m_TargetAssemblyTypeName: Carga, Assembly-CSharp
+        m_MethodName: TurnOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2140716342}
+        m_TargetAssemblyTypeName: Carga, Assembly-CSharp
+        m_MethodName: InteractWithObject
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

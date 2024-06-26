@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,9 @@ public class Carga : MonoBehaviour
     private bool restar = false;
     private bool aumentando = false;
     private bool disminuyendo = false;
-    
+
+    private bool On;
+    private int interacciones = 0;
     [SerializeField] private ControladorRubrica _controladorRubrica;
     
     // Start is called before the first frame update
@@ -20,9 +23,33 @@ public class Carga : MonoBehaviour
         _controladorRubrica = ControladorRubrica.instance;
         ActualizarTexto();
     }
-    void Update()
-    {
 
+    public void InteractWithObject()
+    {
+        interacciones++;
+        if (interacciones == 1 && On)
+        {
+            _controladorRubrica.ActualizarRubrica(8);
+        }
+        else
+        {
+            _controladorRubrica.ActualizarRubrica(8,false);
+        }
+    }
+    
+    private void OnDisable()
+    {
+        On = false;
+    }
+
+    public void TurnOn()
+    {
+        On = true;
+    }
+
+    public void Descarga()
+    {
+        _controladorRubrica.OnDescarga();
     }
     void ActualizarTexto()
     {

@@ -15,6 +15,12 @@ public class ControladorRubrica : MonoBehaviour
         
     [SerializeField] private ListaCondiciones RubricaSo;
 
+    private int ultimaCondicion = 0;
+    public int UltimaCondicion => ultimaCondicion;
+
+    private bool descarga = false;
+    public bool Descarga => Descarga;
+    
     private List<CondicionUI> Condiciones = new List<CondicionUI>();
     private void Awake()
     {
@@ -36,8 +42,7 @@ public class ControladorRubrica : MonoBehaviour
 
     public void ActualizarRubrica(int Index, bool Success = true)
     {
-        if(!Success)
-            
+        ultimaCondicion = Index;
         RubricaSo.UpdateCondicion(Index, Success);
         UpdateRubrica(Index);
     }
@@ -65,5 +70,11 @@ public class ControladorRubrica : MonoBehaviour
         Condicion condicion = RubricaSo.GetCondition(Index);
 
         CondicionToUpdate.UpdateState(condicion.Success);
+        descarga = false;
+    }
+
+    public void OnDescarga()
+    {
+        descarga = true;
     }
 }
