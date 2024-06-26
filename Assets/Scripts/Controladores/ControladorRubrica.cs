@@ -23,6 +23,12 @@ public class ControladorRubrica : MonoBehaviour
         else
             instance = this;
     }
+
+    private void OnApplicationQuit()
+    {
+        RubricaSo.ResetConditions();
+    }
+    
     private void Start()
     {
         CrearRubrica();
@@ -30,9 +36,7 @@ public class ControladorRubrica : MonoBehaviour
 
     public void ActualizarRubrica(int Index, bool Success = true)
     {
-        Condicion condicion = RubricaSo.GetCondition(Index);
-        
-        condicion.OnSuccess(Success);
+        RubricaSo.UpdateCondicion(Index, Success);
         UpdateRubrica(Index);
     }
     public Condicion[] ObtenerCondiciones()
@@ -54,6 +58,7 @@ public class ControladorRubrica : MonoBehaviour
 
     public void UpdateRubrica(int Index)
     {
+        Debug.Log("Estamos Actualizando la Rubrica");
         CondicionUI CondicionToUpdate = Condiciones[Index];
         Condicion condicion = RubricaSo.GetCondition(Index);
 

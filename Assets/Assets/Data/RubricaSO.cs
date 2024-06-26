@@ -28,9 +28,25 @@ public class ListaCondiciones : ScriptableObject
     {
         return Condiciones[Index];
     }
-
+    public void UpdateCondicion(int Index, bool Success = true)
+    {
+        Condicion NewState = Condiciones[Index];
+        NewState.OnSuccess(Success);
+        Condiciones[Index] = NewState;
+    }
     public Condicion[] GetConditions()
     {
         return Condiciones;
+    }
+
+    public void ResetConditions()
+    {
+        for (int i = 0; i < Condiciones.Length -1; i++)
+        {
+            if (i == 6 || i == 12)
+                UpdateCondicion(i);
+            else
+                UpdateCondicion(i, false);
+        }
     }
 }

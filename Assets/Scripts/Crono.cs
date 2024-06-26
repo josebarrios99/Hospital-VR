@@ -16,7 +16,10 @@ public class Crono : MonoBehaviour
     {
         return tiempoMinutos;
     }
-
+    public int getTiempoSec()
+    {
+        return tiempoSegundos;
+    }
     private void Start()
     {
         if(countDown)

@@ -50,7 +50,6 @@ public class ObjetoInteractivo : MonoBehaviour
     public void ActivarObjeto()
     {
         StartCoroutine(delayMenu());
-        
     }
     
 
@@ -65,20 +64,18 @@ public class ObjetoInteractivo : MonoBehaviour
 
     public void TextoPulso()
     {
-        controlador.nuevoCiclo(2, "Se tomó el pulso");
+        // controlador.nuevoCiclo(2, "Se tomï¿½ el pulso");
         if (controladorCompresiones.tienePulso())
         {
             textoPulsoFinal.SetActive(true);
             Invoke("DuracionTexto", 2);
             Debug.Log("tiene pulso");
-
         }
         else
         {
             textoPulso.SetActive(true);
             Invoke("DuracionTexto", 2);
         }
-        
     }
     public void TextoTorax()
     {
@@ -131,12 +128,10 @@ public class ObjetoInteractivo : MonoBehaviour
         if (estado == 0)
         {
             textoInicial.SetActive(true);
-            
         }
         else if (estado == 1)
         {
             textoSegundo.SetActive(true);
-            
         }
         else
         {

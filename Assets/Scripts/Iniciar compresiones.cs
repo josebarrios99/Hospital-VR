@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Iniciarcompresiones : MonoBehaviour
@@ -11,7 +13,13 @@ public class Iniciarcompresiones : MonoBehaviour
 
     [SerializeField] private ControladorRubrica _controladorRubrica;
 
+    [SerializeField] private Crono ControladorTiempo;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        ControladorTiempo = FindObjectOfType<Crono>();
+    }
+
     void Start()
     {
         _controladorRubrica = ControladorRubrica.instance;
@@ -28,12 +36,14 @@ public class Iniciarcompresiones : MonoBehaviour
     
     public void llamarPaciente()
     {
-        controlador.nuevoCiclo(1, "Llamar paciente");
+        // _controladorRubrica.ActualizarRubrica(0);
+        // controlador.nuevoCiclo(1, "Llamar paciente");
     }
     public void iniciarCompresiones()
     {
-        if (FindObjectOfType<Crono>().getTiempoMinutos() <= 0.5)
+        if (ControladorTiempo.getTiempoMinutos() <= 0.5)
         {
+            Debug.Log($"Compresiones  Correctas, Current Time: {ControladorTiempo.getTiempoMinutos()}");
             _controladorRubrica.ActualizarRubrica(2);
         }
         if (FindObjectOfType<Controladoracciones>().pulso == true)
@@ -41,19 +51,17 @@ public class Iniciarcompresiones : MonoBehaviour
             _controladorRubrica.ActualizarRubrica(6, false);
         }
         anim.SetBool("Iniciar compresiones", true);
-        controlador.nuevoCiclo(4, "Iniciar compresiones");
+        // controlador.nuevoCiclo(4, "Iniciar compresiones");
         
     }
     public void iniciarCompresiones2()
     {
-        
         anim.SetBool("Iniciar compresiones 2", true);
-        controlador.nuevoCiclo(4, "Iniciar compresiones");
+        // controlador.nuevoCiclo(4, "Iniciar compresiones");
     }
     public void detenerCompresiones()
     {
         anim.SetBool("Iniciar compresiones", false);
-
     }
     public void detenerCompresiones2()
     {
@@ -70,12 +78,12 @@ public class Iniciarcompresiones : MonoBehaviour
 
     public void iniciarVentilaciones()
     {
-        if (FindObjectOfType<Crono>().getTiempoMinutos() <= 0.75)
+        if (ControladorTiempo.getTiempoMinutos() <= 0.75)
         {
             _controladorRubrica.ActualizarRubrica(14);
         }
         anim.SetBool("Poner mascarilla", true);
-        controlador.nuevoCiclo(3, "Iniciar ventilaciones");
+        // controlador.nuevoCiclo(3, "Iniciar ventilaciones");
     }
     public void detenerVentilaciones()
     {
@@ -88,36 +96,36 @@ public class Iniciarcompresiones : MonoBehaviour
         anim.SetBool("Poner acceso venoso", true);
         
 
-        if (FindObjectOfType<Rubrica>().adrenalina == true)
-        {
-            controlador.nuevoCiclo(5, "Se administr� adrenalina");
-        }
-        if (FindObjectOfType<Rubrica>().atropina == true)
-        {
-            controlador.nuevoCiclo(5, "Se administr� atropina");
-        }
-        if (FindObjectOfType<Rubrica>().noradrenalina == true)
-        {
-            controlador.nuevoCiclo(5, "Se administr� noradrenalina");
-        }
-        if (FindObjectOfType<Rubrica>().amiodarona == true)
-        {
-            controlador.nuevoCiclo(5, "Se administr� amiodarona");
-        }
-        if (FindObjectOfType<Rubrica>().lidocaina == true)
-        {
-            controlador.nuevoCiclo(5, "Se administr� lidocaina");
-        }
-        if (FindObjectOfType<Rubrica>().sulfatoDeMagnesio == true)
-        {
-            controlador.nuevoCiclo(5, "Se administr� sulfatoDeMagnesio");
-        }
+        // if (FindObjectOfType<Rubrica>().adrenalina == true)
+        // {
+        //     controlador.nuevoCiclo(5, "Se administr� adrenalina");
+        // }
+        // if (FindObjectOfType<Rubrica>().atropina == true)
+        // {
+        //     controlador.nuevoCiclo(5, "Se administr� atropina");
+        // }
+        // if (FindObjectOfType<Rubrica>().noradrenalina == true)
+        // {
+        //     controlador.nuevoCiclo(5, "Se administr� noradrenalina");
+        // }
+        // if (FindObjectOfType<Rubrica>().amiodarona == true)
+        // {
+        //     controlador.nuevoCiclo(5, "Se administr� amiodarona");
+        // }
+        // if (FindObjectOfType<Rubrica>().lidocaina == true)
+        // {
+        //     controlador.nuevoCiclo(5, "Se administr� lidocaina");
+        // }
+        // if (FindObjectOfType<Rubrica>().sulfatoDeMagnesio == true)
+        // {
+        //     controlador.nuevoCiclo(5, "Se administr� sulfatoDeMagnesio");
+        // }
 
-        if (FindObjectOfType<Crono>().getTiempoMinutos() <= 2.5)
+        if (ControladorTiempo.getTiempoMinutos() <= 2.5)
         {
             _controladorRubrica.ActualizarRubrica(16);
         }
-        if (FindObjectOfType<Crono>().getTiempoMinutos() <= 6)
+        if (ControladorTiempo.getTiempoMinutos() <= 6)
         {
             if (FindObjectOfType<Rubrica>().amiodarona == true)
             {
@@ -137,7 +145,7 @@ public class Iniciarcompresiones : MonoBehaviour
     public void intramuscular()
     {
         _controladorRubrica.ActualizarRubrica(21,false);
-        controlador.nuevoCiclo(5, "Poner medicamento");
+        // controlador.nuevoCiclo(5, "Poner medicamento");
     }
     public void ActivarDesfribilador()
     {
@@ -145,7 +153,7 @@ public class Iniciarcompresiones : MonoBehaviour
     }
     public void desfibrilador()
     {
-        if (FindObjectOfType<Crono>().getTiempoMinutos() <= 0.5)
+        if (ControladorTiempo.getTiempoSec() <= 30f)
         {
             _controladorRubrica.ActualizarRubrica(7);
         }
@@ -153,11 +161,15 @@ public class Iniciarcompresiones : MonoBehaviour
     }
     public void desfibrilador2()
     {
+        if (ControladorTiempo.getTiempoSec() <= 30f)
+        {
+            _controladorRubrica.ActualizarRubrica(7);
+        }
         anim.SetBool("Desfibrilador 2", true);
     }
     public void descarga()
     {
-        controlador.nuevoCiclo(4, "Se hizo una descarga");
+        // controlador.nuevoCiclo(4, "Se hizo una descarga");
         if (FindObjectOfType<Controladoracciones>().pulso == true)
         {
             _controladorRubrica.ActualizarRubrica(12,false);
