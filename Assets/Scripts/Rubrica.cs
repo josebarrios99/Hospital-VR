@@ -95,22 +95,36 @@ public class Rubrica : MonoBehaviour
     public void ValidarInput()
     {
         int numeroIngresado;
-        
-        if (int.TryParse(inputDosis.text, out numeroIngresado) && lidocaina == true && confirmarDosis == true)
+        Medicamento? UltimoMedicamentoSeleccionado = _controladorRubrica.GetUltimoMedicamentoSeleccionado();
+        switch (UltimoMedicamentoSeleccionado)
         {
-            if (numeroIngresado >= dosisMinima && numeroIngresado <= dosisMaxima)
-                _controladorRubrica.ActualizarRubrica(20);
-            else
-                _controladorRubrica.ActualizarRubrica(20, false);
+            case Medicamento.Adrenalina:
+                if (inputDosis.text == "1" && confirmarDosis == true)
+                    _controladorRubrica.ActualizarRubrica(18);
+                else
+                    _controladorRubrica.ActualizarRubrica(18, false);
+                break;
+            case Medicamento.Amiodarona:
+                if (inputDosis.text == "300" && confirmarDosis == true)
+                    _controladorRubrica.ActualizarRubrica(19);
+                else
+                    _controladorRubrica.ActualizarRubrica(19, false);
+                break;
+            case Medicamento.Lidocaina:
+                if (int.TryParse(inputDosis.text, out numeroIngresado) && confirmarDosis == true)
+                {
+                    if (numeroIngresado >= dosisMinima && numeroIngresado <= dosisMaxima)
+                        _controladorRubrica.ActualizarRubrica(20);
+                    else
+                        _controladorRubrica.ActualizarRubrica(20, false);
+                }
+                break;
+            case Medicamento.Atropina:
+            case Medicamento.Noradrenalina:
+            case Medicamento.SulfatoDeMagnesio:
+            default:
+                break;
         }
-        if (inputDosis.text == "1" && adrenalina == true && confirmarDosis == true)
-            _controladorRubrica.ActualizarRubrica(18);
-        else
-            _controladorRubrica.ActualizarRubrica(18, false);
-        if (inputDosis.text == "300" && amiodarona == true && confirmarDosis == true)
-            _controladorRubrica.ActualizarRubrica(19);
-        else
-            _controladorRubrica.ActualizarRubrica(19, false);
     }
     public void ValidarInputFrecuencia()
     {
@@ -138,34 +152,40 @@ public class Rubrica : MonoBehaviour
     }
     public void SeleccionarAdrenalina()
     {
-        if (adrenalina == false && amiodarona == false && lidocaina == false)
-            _controladorRubrica.ActualizarRubrica(17);
+        _controladorRubrica.OnMedicamentoSeleccionado(Medicamento.Adrenalina);
         adrenalina = true;
+    }
+
+    public void ConsultarPrimerMedicamento()
+    {
         
     }
+    
     public void SeleccionarAmiodarona()
     {
+        _controladorRubrica.OnMedicamentoSeleccionado(Medicamento.Amiodarona);
         amiodarona = true;
-        
     }
     public void SeleccionarAtropina()
     {
+        _controladorRubrica.OnMedicamentoSeleccionado(Medicamento.Atropina);
         atropina = true;
-       
     }
     public void SeleccionarNoradrenalina()
     {
+        _controladorRubrica.OnMedicamentoSeleccionado(Medicamento.Noradrenalina);
         noradrenalina = true;
     }
     public void SeleccionarLidocaina()
     {
+        _controladorRubrica.OnMedicamentoSeleccionado(Medicamento.Lidocaina);
         lidocaina = true;
         
     }
     public void SeleccionarSulfatoDeMagnesio()
     {
+        _controladorRubrica.OnMedicamentoSeleccionado(Medicamento.SulfatoDeMagnesio);
         sulfatoDeMagnesio = true;
-        
     }
     public void ConfirmarDosis()
     {

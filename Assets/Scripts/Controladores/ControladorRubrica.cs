@@ -6,22 +6,36 @@ using System.Net.Mime;
 using Unity.VisualScripting;
 using UnityEngine;
 
+public enum Medicamento
+{
+    Adrenalina,
+    Atropina,
+    Noradrenalina,
+    Amiodarona,
+    Lidocaina,
+    SulfatoDeMagnesio,
+}
+
 public class ControladorRubrica : MonoBehaviour
 {
     public static ControladorRubrica instance;
-    
+
     [SerializeField] private Transform ContenedorRubrica;
     [SerializeField] private CondicionUI PrefabCondicion;
-        
+
     [SerializeField] private ListaCondiciones RubricaSo;
 
     private int ultimaCondicion = 0;
     public int UltimaCondicion => ultimaCondicion;
 
     private bool descarga = false;
+
+    private Medicamento? primerMedicamento = null;
+    private Medicamento? UltimoMedicamentoSeleccionado = null;
     public bool Descarga => descarga;
-    
+
     private List<CondicionUI> Condiciones = new List<CondicionUI>();
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -34,7 +48,7 @@ public class ControladorRubrica : MonoBehaviour
     {
         RubricaSo.ResetConditions();
     }
-    
+
     private void Start()
     {
         CrearRubrica();
@@ -46,6 +60,7 @@ public class ControladorRubrica : MonoBehaviour
         RubricaSo.UpdateCondicion(Index, Success);
         UpdateRubrica(Index);
     }
+
     public Condicion[] ObtenerCondiciones()
     {
         return RubricaSo.GetConditions();
@@ -76,5 +91,21 @@ public class ControladorRubrica : MonoBehaviour
     public void OnDescarga()
     {
         descarga = true;
+    }
+
+    public Medicamento? GetPrimerMedicamento()
+    {
+        return primerMedicamento;
+    }
+    public void OnMedicamentoSeleccionado(Medicamento _Medicamento = Medicamento.Adrenalina)
+    {
+        if (primerMedicamento == null)
+            primerMedicamento = _Medicamento;
+        UltimoMedicamentoSeleccionado = _Medicamento;
+    }
+
+    public Medicamento? GetUltimoMedicamentoSeleccionado()
+    {
+        return UltimoMedicamentoSeleccionado;
     }
 }

@@ -22,8 +22,8 @@ public class Iniciarcompresiones : MonoBehaviour
     {
         _controladorRubrica = ControladorRubrica.instance;
         ControladorTiempo = GameObject.FindGameObjectWithTag("RealCrono").GetComponent<Crono>();
-        anim = gameObject.GetComponent<Animator>();
         controlador = GameObject.Find("Controlador").GetComponent<Controladoracciones>();
+        anim = gameObject.GetComponent<Animator>();
     }
     
     private void FixedUpdate()
@@ -56,7 +56,7 @@ public class Iniciarcompresiones : MonoBehaviour
         {
             _controladorRubrica.ActualizarRubrica(2);
         }
-        if (FindObjectOfType<Controladoracciones>().pulso == true)
+        if (controlador.pulso == true)
         {
             _controladorRubrica.ActualizarRubrica(6, false);
         }
@@ -74,7 +74,7 @@ public class Iniciarcompresiones : MonoBehaviour
         {
             _controladorRubrica.ActualizarRubrica(2);
         }
-        if (FindObjectOfType<Controladoracciones>().pulso == true)
+        if (controlador.pulso == true)
         {
             _controladorRubrica.ActualizarRubrica(6, false);
         }
@@ -126,55 +126,49 @@ public class Iniciarcompresiones : MonoBehaviour
     }
     public void ponerMedicamento()
     {
+        Medicamento? MedicamentoSeleccionado = _controladorRubrica.GetUltimoMedicamentoSeleccionado();
+        
+        switch (MedicamentoSeleccionado)
+        {
+            case Medicamento.Adrenalina:
+                var PrimerMedicamento = _controladorRubrica.GetPrimerMedicamento();
+                if (PrimerMedicamento == Medicamento.Adrenalina)
+                {
+                    _controladorRubrica.ActualizarRubrica(17);
+            
+                }
+                break;
+            case Medicamento.Amiodarona:
+                if (ControladorTiempo.getTiempoMinutos() <= 6)
+                    _controladorRubrica.ActualizarRubrica(22);
+                break;
+            case Medicamento.Lidocaina:
+                if (ControladorTiempo.getTiempoMinutos() <= 6)
+                    _controladorRubrica.ActualizarRubrica(23);
+                break;
+            case Medicamento.Atropina:
+            case Medicamento.Noradrenalina:
+            case Medicamento.SulfatoDeMagnesio:
+                if (!controlador.pulso)
+                    _controladorRubrica.ActualizarRubrica(24,false);
+                else
+                    _controladorRubrica.ActualizarRubrica(24);
+                break;
+            default:
+                return;
+        }
+        
         _controladorRubrica.ActualizarRubrica(21);
         anim.SetBool("Poner acceso venoso", true);
-        
-
-        // if (FindObjectOfType<Rubrica>().adrenalina == true)
-        // {
-        //     controlador.nuevoCiclo(5, "Se administr� adrenalina");
-        // }
-        // if (FindObjectOfType<Rubrica>().atropina == true)
-        // {
-        //     controlador.nuevoCiclo(5, "Se administr� atropina");
-        // }
-        // if (FindObjectOfType<Rubrica>().noradrenalina == true)
-        // {
-        //     controlador.nuevoCiclo(5, "Se administr� noradrenalina");
-        // }
-        // if (FindObjectOfType<Rubrica>().amiodarona == true)
-        // {
-        //     controlador.nuevoCiclo(5, "Se administr� amiodarona");
-        // }
-        // if (FindObjectOfType<Rubrica>().lidocaina == true)
-        // {
-        //     controlador.nuevoCiclo(5, "Se administr� lidocaina");
-        // }
-        // if (FindObjectOfType<Rubrica>().sulfatoDeMagnesio == true)
-        // {
-        //     controlador.nuevoCiclo(5, "Se administr� sulfatoDeMagnesio");
-        // }
-
-        
-        if (ControladorTiempo.getTiempoMinutos() <= 6)
-        {
-            if (FindObjectOfType<Rubrica>().amiodarona == true)
-            {
-                _controladorRubrica.ActualizarRubrica(22);
-            }
-            if (FindObjectOfType<Rubrica>().lidocaina == true)
-            {
-                _controladorRubrica.ActualizarRubrica(23);
-            }
-        }
-        if (FindObjectOfType<Rubrica>().lidocaina == true || FindObjectOfType<Rubrica>().amiodarona == true || FindObjectOfType<Rubrica>().adrenalina == true)
-            _controladorRubrica.ActualizarRubrica(24);
-        else 
-            _controladorRubrica.ActualizarRubrica(24,false);
     }
 
     public void intramuscular()
     {
+        var PrimerMedicamento = _controladorRubrica.GetPrimerMedicamento();
+        if (PrimerMedicamento == Medicamento.Adrenalina)
+        {
+            _controladorRubrica.ActualizarRubrica(17);
+        }
         _controladorRubrica.ActualizarRubrica(21,false);
         // controlador.nuevoCiclo(5, "Poner medicamento");
     }
@@ -201,11 +195,11 @@ public class Iniciarcompresiones : MonoBehaviour
     public void descarga()
     {
         // controlador.nuevoCiclo(4, "Se hizo una descarga");
-        if (FindObjectOfType<Controladoracciones>().pulso == true)
+        if (controlador.pulso == true)
         {
             _controladorRubrica.ActualizarRubrica(12,false);
         }
-        if (FindObjectOfType<Controladoracciones>().pulso == false)
+        if (controlador.pulso == false)
         {
             _controladorRubrica.ActualizarRubrica(10);
         }
@@ -221,7 +215,7 @@ public class Iniciarcompresiones : MonoBehaviour
     }
     public void tomarPresion()
     {
-        if (FindObjectOfType<Controladoracciones>().pulso == true)
+        if (controlador.pulso)
         {
             _controladorRubrica.ActualizarRubrica(25);
         } else
@@ -232,7 +226,7 @@ public class Iniciarcompresiones : MonoBehaviour
     }
     public void ponerSaturador()
     {
-        if (FindObjectOfType<Controladoracciones>().pulso == true)
+        if (controlador.pulso)
         {
             _controladorRubrica.ActualizarRubrica(26);
         }
@@ -244,7 +238,7 @@ public class Iniciarcompresiones : MonoBehaviour
     }
     public void auscultarTorax()
     {
-        if (FindObjectOfType<Controladoracciones>().pulso == true)
+        if (controlador.pulso == true)
         {
             _controladorRubrica.ActualizarRubrica(27);
         }
