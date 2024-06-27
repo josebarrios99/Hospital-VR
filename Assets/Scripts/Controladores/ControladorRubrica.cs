@@ -80,7 +80,6 @@ public class ControladorRubrica : MonoBehaviour
 
     public void UpdateRubrica(int Index)
     {
-        Debug.Log("Estamos Actualizando la Rubrica");
         CondicionUI CondicionToUpdate = Condiciones[Index];
         Condicion condicion = RubricaSo.GetCondition(Index);
 

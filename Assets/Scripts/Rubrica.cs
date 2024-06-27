@@ -14,7 +14,7 @@ public class Rubrica : MonoBehaviour
     public List<string> nombresCondiciones;
     
     //medicamentos
-    public TMP_InputField inputDosis;
+    public Text inputDosis;
     public TMP_InputField inputFrecuencia;
     public TMP_InputField inputProfundidad;
     public bool adrenalina = false;
@@ -45,13 +45,14 @@ public class Rubrica : MonoBehaviour
     private int indiceSiguientePulso = 0;
 
     public bool confirmarDosis = false;
+    private string DosisSeleccionada;
     
     [SerializeField] private ControladorRubrica _controladorRubrica;
     void Start()
     {
         _controladorRubrica = ControladorRubrica.instance;
         
-        inputDosis.onValueChanged.AddListener(delegate { ValidarInput(); });
+        // inputDosis.onValueChanged.AddListener(CambiarDosis);
        // inputFrecuencia.onValueChanged.AddListener(delegate { ValidarInputFrecuencia(); });
        // inputProfundidad.onValueChanged.AddListener(delegate { ValidarInputProfundidad(); });
         for (int i = 0; i < botonesPaciente.Length; i++)
@@ -94,24 +95,28 @@ public class Rubrica : MonoBehaviour
     // }
     public void ValidarInput()
     {
+        DosisSeleccionada = inputDosis.text;
         int numeroIngresado;
         Medicamento? UltimoMedicamentoSeleccionado = _controladorRubrica.GetUltimoMedicamentoSeleccionado();
+        Debug.Log($"Ultimo Medicamento Seleccionado: {UltimoMedicamentoSeleccionado}");
+        Debug.Log($"Cantidad a Administrar: {DosisSeleccionada}");
+        Debug.Log($"Dosis Confirmada?: {confirmarDosis}");
         switch (UltimoMedicamentoSeleccionado)
         {
             case Medicamento.Adrenalina:
-                if (inputDosis.text == "1" && confirmarDosis == true)
+                if (DosisSeleccionada == "1" && confirmarDosis == true)
                     _controladorRubrica.ActualizarRubrica(18);
                 else
                     _controladorRubrica.ActualizarRubrica(18, false);
                 break;
             case Medicamento.Amiodarona:
-                if (inputDosis.text == "300" && confirmarDosis == true)
+                if (DosisSeleccionada == "300" && confirmarDosis == true)
                     _controladorRubrica.ActualizarRubrica(19);
                 else
                     _controladorRubrica.ActualizarRubrica(19, false);
                 break;
             case Medicamento.Lidocaina:
-                if (int.TryParse(inputDosis.text, out numeroIngresado) && confirmarDosis == true)
+                if (int.TryParse(DosisSeleccionada, out numeroIngresado) && confirmarDosis == true)
                 {
                     if (numeroIngresado >= dosisMinima && numeroIngresado <= dosisMaxima)
                         _controladorRubrica.ActualizarRubrica(20);
@@ -152,7 +157,7 @@ public class Rubrica : MonoBehaviour
     }
     public void SeleccionarAdrenalina()
     {
-        _controladorRubrica.OnMedicamentoSeleccionado(Medicamento.Adrenalina);
+        _controladorRubrica.OnMedicamentoSeleccionado();
         adrenalina = true;
     }
 
@@ -190,8 +195,6 @@ public class Rubrica : MonoBehaviour
     public void ConfirmarDosis()
     {
         confirmarDosis = true;
-        
-        
         ValidarInput(); 
     }
     public void reiniciarMedicamentos()
