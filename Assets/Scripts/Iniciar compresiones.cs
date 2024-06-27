@@ -21,6 +21,7 @@ public class Iniciarcompresiones : MonoBehaviour
     void Start()
     {
         _controladorRubrica = ControladorRubrica.instance;
+        ControladorTiempo = GameObject.FindGameObjectWithTag("RealCrono").GetComponent<Crono>();
         anim = gameObject.GetComponent<Animator>();
         controlador = GameObject.Find("Controlador").GetComponent<Controladoracciones>();
     }
