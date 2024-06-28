@@ -14,8 +14,7 @@ public class Carga : MonoBehaviour
     private bool disminuyendo = false;
 
     private bool On;
-    private int interacciones = 0;
-    [SerializeField] private ControladorRubrica _controladorRubrica;
+    private ControladorRubrica _controladorRubrica;
     
     // Start is called before the first frame update
     void Start()
@@ -26,8 +25,7 @@ public class Carga : MonoBehaviour
 
     public void InteractWithObject()
     {
-        interacciones++;
-        if (interacciones == 1 && On)
+        if (On)
         {
             _controladorRubrica.ActualizarRubrica(8);
         }
@@ -54,10 +52,11 @@ public class Carga : MonoBehaviour
     void ActualizarTexto()
     {
         // Actualizar el texto con el n�mero actual
-        texto.text = "" + numero.ToString();
+        texto.text = numero.ToString();
     }
     public void ValidarCarga()
     {
+        Debug.Log("Estamos Validando Carga");
         if (numero == 200)
         {
             _controladorRubrica.ActualizarRubrica(9);

@@ -36,7 +36,7 @@ public class Controladoracciones : MonoBehaviour
             }
             
         }
-        if (cronometro != null && pulso == true)
+        if (cronometro != null && pulso)
         {
             if (FindObjectOfType<Crono>().getTiempoMinutos() >= 12)
             {

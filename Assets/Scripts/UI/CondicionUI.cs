@@ -21,7 +21,6 @@ public class CondicionUI : MonoBehaviour
     
     public void UpdateState(bool Success)
     {
-        Debug.Log($"State its {Success}");
         Check.isOn = Success;
     }
 }

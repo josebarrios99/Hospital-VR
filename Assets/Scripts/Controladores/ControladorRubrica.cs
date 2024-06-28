@@ -25,8 +25,8 @@ public class ControladorRubrica : MonoBehaviour
 
     [SerializeField] private ListaCondiciones RubricaSo;
 
-    private int ultimaCondicion = 0;
-    public int UltimaCondicion => ultimaCondicion;
+    private int ?ultimaCondicion = null;
+    public int? UltimaCondicion => ultimaCondicion;
 
     private bool descarga = false;
 
@@ -35,7 +35,7 @@ public class ControladorRubrica : MonoBehaviour
     public bool Descarga => descarga;
 
     private List<CondicionUI> Condiciones = new List<CondicionUI>();
-
+    
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -56,6 +56,21 @@ public class ControladorRubrica : MonoBehaviour
 
     public void ActualizarRubrica(int Index, bool Success = true)
     {
+        if (Index == 0)
+        {
+            if (ultimaCondicion != null)
+            {
+                RubricaSo.UpdateCondicion(Index, false);
+            }
+        }
+
+        if (Index == 1)
+        {
+            if (ultimaCondicion != 0)
+            {
+                RubricaSo.UpdateCondicion(Index, false);
+            }
+        }
         ultimaCondicion = Index;
         RubricaSo.UpdateCondicion(Index, Success);
         UpdateRubrica(Index);
