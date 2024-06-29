@@ -14,13 +14,16 @@ public class OutlineShaderController : MonoBehaviour
     private MeshRenderer MeshesArray;
     private void Start()
     {
-        Model = gameObject;
+        if (Model == null)
+            Model = gameObject;
+        
         if (Model.name == "Body")
             MeshesArray = Model.GetComponent<MeshRenderer>();
         else
             SkinedMeshesArray = Model.GetComponentsInChildren<SkinnedMeshRenderer>();
-
-        CharacterName = Model.transform.Find("CharacterCanvas").gameObject;
+        
+        if(CharacterName == null)
+            CharacterName = Model.transform.Find("CharacterCanvas").gameObject;
         HideOutlines();
     }
 

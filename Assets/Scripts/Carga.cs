@@ -44,11 +44,6 @@ public class Carga : MonoBehaviour
     {
         On = true;
     }
-
-    public void Descarga()
-    {
-        _controladorRubrica.OnDescarga();
-    }
     void ActualizarTexto()
     {
         // Actualizar el texto con el n�mero actual

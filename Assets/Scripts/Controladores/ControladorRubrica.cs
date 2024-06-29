@@ -28,11 +28,8 @@ public class ControladorRubrica : MonoBehaviour
     private int ?ultimaCondicion = null;
     public int? UltimaCondicion => ultimaCondicion;
 
-    private bool descarga = false;
-
     private Medicamento? primerMedicamento = null;
     private Medicamento? UltimoMedicamentoSeleccionado = null;
-    public bool Descarga => descarga;
 
     private List<CondicionUI> Condiciones = new List<CondicionUI>();
     
@@ -114,14 +111,7 @@ public class ControladorRubrica : MonoBehaviour
         Condicion condicion = RubricaSo.GetCondition(Index);
 
         CondicionToUpdate.UpdateState(condicion.Success);
-        descarga = false;
     }
-
-    public void OnDescarga()
-    {
-        descarga = true;
-    }
-
     public Medicamento? GetPrimerMedicamento()
     {
         return primerMedicamento;

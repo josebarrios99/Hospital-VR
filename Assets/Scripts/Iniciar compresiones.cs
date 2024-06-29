@@ -55,8 +55,6 @@ public class Iniciarcompresiones : MonoBehaviour
         {
             _controladorRubrica.ActualizarRubrica(6, false);
         }
-        if(_controladorRubrica.Descarga)
-            _controladorRubrica.ActualizarRubrica(11);
         CompresionesIniciadas = true;
         anim.SetBool("Iniciar compresiones", true);
         Debug.Log("Se inician Compresiones");
@@ -73,8 +71,6 @@ public class Iniciarcompresiones : MonoBehaviour
         {
             _controladorRubrica.ActualizarRubrica(6, false);
         }
-        if(_controladorRubrica.Descarga)
-            _controladorRubrica.ActualizarRubrica(11);
         anim.SetBool("Iniciar compresiones 2", true);
         Debug.Log("Se inician Compresiones");
         CompresionesIniciadas = true;

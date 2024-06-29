@@ -36,19 +36,23 @@ public class Selected : MonoBehaviour
             {
                 Deselect();
                 SelectedObject(hit.transform);
+                ObjetoInteractivo hitObjetoInteractivo = hit.collider.transform.GetComponent<ObjetoInteractivo>();
+                OutlineShaderController hitOutlineController = hit.collider.transform.GetComponent<OutlineShaderController>();
                 
                 if (hit.collider.tag == "Objeto interactivo")
                 {
-                    hit.collider.transform.GetComponent<OutlineShaderController>().SetOutlines();
+                    if(hitOutlineController)
+                        hitOutlineController.SetOutlines();
                     if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
                     {
-                        hit.collider.transform.GetComponent<ObjetoInteractivo>().ActivarObjeto();
-                       activarRaycast=false;
+                        hitObjetoInteractivo.ActivarObjeto();
+                        activarRaycast=false;
                     }
                 }
                 if (hit.collider.tag == "Ventilaciones")
                 {
-                    hit.collider.transform.GetComponent<OutlineShaderController>().SetOutlines();
+                    if(hitOutlineController)
+                        hitOutlineController.SetOutlines();
                     if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
                     {
                         hit.collider.transform.GetComponent<Iniciarcompresiones>().iniciarVentilaciones();
@@ -57,34 +61,34 @@ public class Selected : MonoBehaviour
                 }
                 if (hit.collider.tag == "Ayudante")
                 {
-                    hit.collider.transform.GetComponent<OutlineShaderController>().SetOutlines();
-
+                    if(hitOutlineController)
+                        hitOutlineController.SetOutlines();
                     if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
                     {
-                        hit.collider.transform.GetComponent<ObjetoInteractivo>().ActivarObjeto();
+                        hitObjetoInteractivo.ActivarObjeto();
                         activarRaycast = false;
                     }
 
                 }
                 if (hit.collider.tag == "Lista")
                 {
-                    hit.collider.transform.GetComponent<OutlineShaderController>().SetOutlines();
+                    if(hitOutlineController)
+                        hitOutlineController.SetOutlines();
                     if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
                     {
-                        hit.collider.transform.GetComponent<ObjetoInteractivo>().MostrarLista();
+                        hitObjetoInteractivo.MostrarLista();
                         activarRaycast = false;
                     }
 
                 }
                 if (hit.collider.tag == "Paciente")
                 {
-                    OutlineShaderController OutlineController = hit.collider.transform.GetComponent<OutlineShaderController>();
-                    if(OutlineController)
-                        OutlineController.SetOutlines();
+                    if(hitOutlineController)
+                        hitOutlineController.SetOutlines();
                     
                     if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
                     {
-                        hit.collider.transform.GetComponent<ObjetoInteractivo>().ActivarObjeto();
+                        hitObjetoInteractivo.ActivarObjeto();
                         activarRaycast = false;
                     }
                 }

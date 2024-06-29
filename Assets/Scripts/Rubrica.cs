@@ -28,7 +28,7 @@ public class Rubrica : MonoBehaviour
     private int indiceSiguientePaciente = 0;
 
     public Button[] botonesDescarga;
-    private List<int> secuenciaDescarga = new List<int>() { 0, 1, 2 };
+    private List<int> secuenciaDescarga = new List<int>() { 0, 2 };
     private int indiceSiguienteDescarga = 0;
 
     public Button[] botonesPulso;
@@ -197,14 +197,17 @@ public class Rubrica : MonoBehaviour
     }
     void ValidarOrdenBotonDescarga(int indiceBoton)
     {
+        Debug.Log("Descarga true");
+        Debug.Log($"Indice Btn {indiceBoton}");
+        Debug.Log($"Indice Sig Descarga {indiceSiguienteDescarga}");
+        
         if (indiceBoton == secuenciaDescarga[indiceSiguienteDescarga])
         {
             indiceSiguienteDescarga++;
-
+        
             if (indiceSiguienteDescarga >= secuenciaDescarga.Count)
                 _controladorRubrica.ActualizarRubrica(11);
         }
-
         else
         {
             _controladorRubrica.ActualizarRubrica(11,false);
