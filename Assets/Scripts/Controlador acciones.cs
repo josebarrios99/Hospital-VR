@@ -1,28 +1,34 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class Controladoracciones : MonoBehaviour
 {
-    List<string> ordenesTexto;
+    [SerializeField] private ControladorRubrica _controladorRubrica;
+    [SerializeField] private TMP_Text ListGO;
+    [SerializeField] private Transform ListTransform;
+    [SerializeField] private Crono TimeController;
+    
     public GameObject video;
     public GameObject video2;
     public GameObject jugador;
+    private PlayerController ControladorJugador;
     public GameObject pantallaFinal;
 
-    [SerializeField] private ControladorRubrica _controladorRubrica; 
     public bool pulso;
     
     // Start is called before the first frame update
     void Start()
     {
         _controladorRubrica = ControladorRubrica.instance;
-        jugador.GetComponent<PlayerController>().CantMove = true;
-        jugador.GetComponent<PlayerController>().ActivarCursor();
+        TimeController = GameObject.FindGameObjectWithTag("RealCrono").GetComponent<Crono>();
+        
+        ControladorJugador = jugador.GetComponent<PlayerController>();
+        ControladorJugador.CantMove = true;
+        ControladorJugador.ActivarCursor();
+        
         video.SetActive(false);
         video2.SetActive(false);
-        ordenesTexto = new List<string>();
     }
     private void Update()
     {
@@ -32,7 +38,7 @@ public class Controladoracciones : MonoBehaviour
 
             if (FindObjectOfType<Crono>().getTiempoMinutos() >= 10)
             {
-                // verificarCiclos();
+                verificarCiclos();
             }
             
         }
@@ -40,47 +46,40 @@ public class Controladoracciones : MonoBehaviour
         {
             if (FindObjectOfType<Crono>().getTiempoMinutos() >= 12)
             {
-                jugador.GetComponent<PlayerController>().CantMove = true;
+                ControladorJugador.CantMove = true;
                 pantallaFinal.SetActive(true);
             }
         }
     }
-    // Update is called once per frame
-    // public void verificarCiclos()
-    // {
-    //    double calificacion = finalCiclos();
-    // }
     
-    // public double finalCiclos()
-    // {
-    //     bool esCorrecto = true;
-    //     double calificacion = 0.0;
-    //     double correctos = 0.0;
-    //     
-    //     calificacion = (correctos / ordenCorrecto.Count) * 100;
-    //
-    //     pulso = true;
-    //
-    //     FindObjectOfType<ObjetoInteractivo>().toraxParo = true;
-    //     FindObjectOfType<ObjetoInteractivo>().presionParo = true;
-    //     FindObjectOfType<ObjetoInteractivo>().saturacionParo = true;
-    //
-    //     video.SetActive(true);
-    //     video2.SetActive(true);
-    //     return calificacion;
-    // }
+    public void verificarCiclos()
+    {
+       double calificacion = finalCiclos();
+    }
+    
+    public double finalCiclos()
+    {
+        double calificacion = 0.0;
+
+        calificacion = _controladorRubrica.GetProgress();
+    
+        pulso = true;
+    
+        FindObjectOfType<ObjetoInteractivo>().toraxParo = true;
+        FindObjectOfType<ObjetoInteractivo>().presionParo = true;
+        FindObjectOfType<ObjetoInteractivo>().saturacionParo = true;
+    
+        video.SetActive(true);
+        video2.SetActive(true);
+        return calificacion;
+    }
     public bool tienePulso()
     {
         return pulso;
     }
-    // public void nuevoCiclo(int ciclo, string texto)
-    // {
-    //     ordenes.Add(ciclo);
-    //     ordenesTexto.Add(texto + " " + FindObjectOfType<Crono>().obtenerTiempo());
-    // }
-    public List<string> retornarLista(){
-
-        return ordenesTexto;
-    
+    public void nuevoCiclo(string texto)
+    {
+        TMP_Text Text = Instantiate(ListGO, ListTransform);
+        Text.text = TimeController.obtenerTiempo() + ": " + texto;
     }
 }

@@ -20,6 +20,7 @@ public class ObjetoInteractivo : MonoBehaviour
     public GameObject textoTorax;
     public GameObject textoToraxFinal;
     public GameObject jugador;
+    private PlayerController ControladorJugador;
     public GameObject mostrarObjeto;
     public GameObject posicionCompresiones;
     public GameObject compresorInicial;
@@ -36,13 +37,14 @@ public class ObjetoInteractivo : MonoBehaviour
 
     void Start()
     {
+        ControladorJugador = jugador.GetComponent<PlayerController>();
         mostrarObjeto.SetActive(false);
     }
     private IEnumerator delayMenu() {
 
         yield return null;
-        jugador.GetComponent<PlayerController>().CantMove = true;
-        jugador.GetComponent<PlayerController>().DesactivarCursor();
+        ControladorJugador.CantMove = true;
+        ControladorJugador.DesactivarCursor();
 
         MostrarMenu();
 
@@ -64,7 +66,6 @@ public class ObjetoInteractivo : MonoBehaviour
 
     public void TextoPulso()
     {
-        // controlador.nuevoCiclo(2, "Se tom� el pulso");
         if (controladorCompresiones.tienePulso())
         {
             textoPulsoFinal.SetActive(true);
@@ -157,12 +158,8 @@ public class ObjetoInteractivo : MonoBehaviour
     }
     public void MostrarLista()
     {
-        jugador.GetComponent<PlayerController>().CantMove = true;
-
-        string textoFinal = "";
-
-        foreach (var texto in controlador.retornarLista()) textoFinal += texto.ToString() + "\n";
-        textoLista.text =textoFinal;
+        ControladorJugador.CantMove = true;
+        
         textoInicial.SetActive(true);
     }
     public void definirEstado(int estado)

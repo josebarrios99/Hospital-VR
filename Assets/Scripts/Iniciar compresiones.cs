@@ -45,11 +45,6 @@ public class Iniciarcompresiones : MonoBehaviour
         return controlador.tienePulso();
     }
     
-    public void llamarPaciente()
-    {
-        // _controladorRubrica.ActualizarRubrica(0);
-        // controlador.nuevoCiclo(1, "Llamar paciente");
-    }
     public void iniciarCompresiones()
     {
         if (ControladorTiempo.getTiempoSec() <= 30f)
@@ -65,7 +60,7 @@ public class Iniciarcompresiones : MonoBehaviour
         CompresionesIniciadas = true;
         anim.SetBool("Iniciar compresiones", true);
         Debug.Log("Se inician Compresiones");
-        // controlador.nuevoCiclo(4, "Iniciar compresiones");
+        controlador.nuevoCiclo("Iniciar compresiones");
         
     }
     public void iniciarCompresiones2()
@@ -83,7 +78,7 @@ public class Iniciarcompresiones : MonoBehaviour
         anim.SetBool("Iniciar compresiones 2", true);
         Debug.Log("Se inician Compresiones");
         CompresionesIniciadas = true;
-        // controlador.nuevoCiclo(4, "Iniciar compresiones");
+        controlador.nuevoCiclo("Iniciar compresiones");
     }
     public void detenerCompresiones()
     {
@@ -111,11 +106,12 @@ public class Iniciarcompresiones : MonoBehaviour
             _controladorRubrica.ActualizarRubrica(14);
         }
         anim.SetBool("Poner mascarilla", true);
-        // controlador.nuevoCiclo(3, "Iniciar ventilaciones");
+        controlador.nuevoCiclo("Iniciar ventilaciones");
     }
     public void detenerVentilaciones()
     {
         anim.SetBool("Poner mascarilla", false);
+        controlador.nuevoCiclo("Se detienen Ventilaciones");
     }
     public void ponerAccesoVenoso()
     {
@@ -123,11 +119,13 @@ public class Iniciarcompresiones : MonoBehaviour
         {
             _controladorRubrica.ActualizarRubrica(16);
         }
+        controlador.nuevoCiclo("Se pone acceso venoso");
     }
     public void ponerMedicamento()
     {
         Medicamento? MedicamentoSeleccionado = _controladorRubrica.GetUltimoMedicamentoSeleccionado();
-        
+        if(MedicamentoSeleccionado != null)
+            controlador.nuevoCiclo($"Se administr� {MedicamentoSeleccionado.ToString()}");
         switch (MedicamentoSeleccionado)
         {
             case Medicamento.Adrenalina:
@@ -170,11 +168,7 @@ public class Iniciarcompresiones : MonoBehaviour
             _controladorRubrica.ActualizarRubrica(17);
         }
         _controladorRubrica.ActualizarRubrica(21,false);
-        // controlador.nuevoCiclo(5, "Poner medicamento");
-    }
-    public void ActivarDesfribilador()
-    {
-
+        controlador.nuevoCiclo("Poner medicamento Intramuscular");
     }
     public void desfibrilador()
     {
@@ -194,7 +188,7 @@ public class Iniciarcompresiones : MonoBehaviour
     }
     public void descarga()
     {
-        // controlador.nuevoCiclo(4, "Se hizo una descarga");
+        controlador.nuevoCiclo("Se hizo una descarga");
         if (controlador.pulso == true)
         {
             _controladorRubrica.ActualizarRubrica(12,false);
@@ -203,15 +197,16 @@ public class Iniciarcompresiones : MonoBehaviour
         {
             _controladorRubrica.ActualizarRubrica(10);
         }
-        Debug.Log("se hizo una descarga");
     }
     public void detenerDesfibrilador()
     {
         anim.SetBool("Desfibrilador", false);
+        controlador.nuevoCiclo("Se Detiene Desfibrilacion");
     }
     public void detenerDesfibrilador2()
     {
         anim.SetBool("Desfibrilador 2", false);
+        controlador.nuevoCiclo("Se Detiene Desfibrilacion");
     }
     public void tomarPresion()
     {
@@ -223,6 +218,7 @@ public class Iniciarcompresiones : MonoBehaviour
             _controladorRubrica.ActualizarRubrica(25,false);
         }
         anim.SetBool("Tomar presi�n", true);
+        controlador.nuevoCiclo("Se Toma Presion");
     }
     public void ponerSaturador()
     {
@@ -235,6 +231,7 @@ public class Iniciarcompresiones : MonoBehaviour
             _controladorRubrica.ActualizarRubrica(26,false);
         }
         anim.SetBool("Saturador", true);
+        controlador.nuevoCiclo("Se pone Saturador");
     }
     public void auscultarTorax()
     {
@@ -247,5 +244,6 @@ public class Iniciarcompresiones : MonoBehaviour
             _controladorRubrica.ActualizarRubrica(27,false);
         }
         anim.SetBool("T�rax", true);
+        controlador.nuevoCiclo("Se Ausculta Torax");
     }
 }

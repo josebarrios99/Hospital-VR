@@ -24,7 +24,7 @@ public class ControladorRubrica : MonoBehaviour
     [SerializeField] private CondicionUI PrefabCondicion;
 
     [SerializeField] private ListaCondiciones RubricaSo;
-
+    
     private int ?ultimaCondicion = null;
     public int? UltimaCondicion => ultimaCondicion;
 
@@ -54,6 +54,21 @@ public class ControladorRubrica : MonoBehaviour
         CrearRubrica();
     }
 
+    public int GetProgress()
+    {
+        Condicion[] Conditions = RubricaSo.GetConditions();
+        int MaxConditions = Conditions.Length;
+
+        int SuccessConditions = 0;
+        foreach (var Condition in Conditions)
+        {
+            if (Condition.Success)
+                SuccessConditions += 1;
+        }
+
+        float Procentage = SuccessConditions / MaxConditions;
+        return (int)Procentage * 100;
+    }
     public void ActualizarRubrica(int Index, bool Success = true)
     {
         if (Index == 0)

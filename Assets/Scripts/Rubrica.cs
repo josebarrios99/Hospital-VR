@@ -9,20 +9,11 @@ using UnityEngine.UI;
 public class Rubrica : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI textoCondiciones;
-    //acciones
-    public Text porcentajeCondiciones;
-    public List<string> nombresCondiciones;
     
     //medicamentos
     public Text inputDosis;
     public TMP_InputField inputFrecuencia;
     public TMP_InputField inputProfundidad;
-    public bool adrenalina = false;
-    public bool atropina = false;
-    public bool noradrenalina = false;
-    public bool amiodarona = false;
-    public bool lidocaina = false;
-    public bool sulfatoDeMagnesio = false;
 
     private int dosisMinima = 70;
     private int dosisMaxima = 100;
@@ -48,13 +39,12 @@ public class Rubrica : MonoBehaviour
     private string DosisSeleccionada;
     
     [SerializeField] private ControladorRubrica _controladorRubrica;
+    [SerializeField] Controladoracciones controlador;
     void Start()
     {
         _controladorRubrica = ControladorRubrica.instance;
+        controlador = GameObject.Find("Controlador").GetComponent<Controladoracciones>();
         
-        // inputDosis.onValueChanged.AddListener(CambiarDosis);
-       // inputFrecuencia.onValueChanged.AddListener(delegate { ValidarInputFrecuencia(); });
-       // inputProfundidad.onValueChanged.AddListener(delegate { ValidarInputProfundidad(); });
         for (int i = 0; i < botonesPaciente.Length; i++)
         {
             int indiceBoton = i; // Captura el valor actual de 'i' para el delegado
@@ -158,54 +148,33 @@ public class Rubrica : MonoBehaviour
     public void SeleccionarAdrenalina()
     {
         _controladorRubrica.OnMedicamentoSeleccionado();
-        adrenalina = true;
-    }
-
-    public void ConsultarPrimerMedicamento()
-    {
-        
     }
     
     public void SeleccionarAmiodarona()
     {
         _controladorRubrica.OnMedicamentoSeleccionado(Medicamento.Amiodarona);
-        amiodarona = true;
     }
     public void SeleccionarAtropina()
     {
         _controladorRubrica.OnMedicamentoSeleccionado(Medicamento.Atropina);
-        atropina = true;
     }
     public void SeleccionarNoradrenalina()
     {
         _controladorRubrica.OnMedicamentoSeleccionado(Medicamento.Noradrenalina);
-        noradrenalina = true;
     }
     public void SeleccionarLidocaina()
     {
         _controladorRubrica.OnMedicamentoSeleccionado(Medicamento.Lidocaina);
-        lidocaina = true;
-        
     }
     public void SeleccionarSulfatoDeMagnesio()
     {
         _controladorRubrica.OnMedicamentoSeleccionado(Medicamento.SulfatoDeMagnesio);
-        sulfatoDeMagnesio = true;
     }
     public void ConfirmarDosis()
     {
         confirmarDosis = true;
         ValidarInput(); 
     }
-    public void reiniciarMedicamentos()
-    {
-        adrenalina = false;
-        atropina = false;
-        noradrenalina = false;
-        amiodarona = false;
-        lidocaina = false;
-        sulfatoDeMagnesio = false;
-}
     public void validarVentilaciones()
     {
         _controladorRubrica.ActualizarRubrica(15);
@@ -216,10 +185,12 @@ public class Rubrica : MonoBehaviour
         {
             indiceSiguientePaciente++;
             _controladorRubrica.ActualizarRubrica(0);
+            controlador.nuevoCiclo("Llamar paciente");
 
             if (indiceSiguientePaciente >= secuenciaPaciente.Count)
             {
                 _controladorRubrica.ActualizarRubrica(1);
+                controlador.nuevoCiclo("Se tom? el pulso");
             }
         }
         

@@ -116,8 +116,6 @@ public class Selected : MonoBehaviour
             if (OutlineController)
                 OutlineController.HideOutlines();
             
-            ultimoReconocido.GetComponent<Renderer>().material.color = Color.white;
-            
             ultimoReconocido = null;
         }
     }
