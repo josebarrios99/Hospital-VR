@@ -48566,6 +48566,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100002, guid: 35ba0db70f1cb544b8f023385a140132, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1439647964}
+    - targetCorrespondingSourceObject: {fileID: 100002, guid: 35ba0db70f1cb544b8f023385a140132, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1439647968}
   m_SourcePrefab: {fileID: 100100000, guid: 35ba0db70f1cb544b8f023385a140132, type: 3}
 --- !u!1 &1439647958 stripped
 GameObject:
@@ -48719,6 +48722,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 35ba0db70f1cb544b8f023385a140132, type: 3}
   m_PrefabInstance: {fileID: 1439647957}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1439647968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439647958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc55f10f6118624b89e245cc3b90adc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuente: {fileID: 1213792496}
+  clip: {fileID: 8300000, guid: ffabd69415176be4fb584d8f7c938216, type: 3}
 --- !u!1001 &1454012986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57205,7 +57222,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2140716342}
+      - m_Target: {fileID: 1992325835}
         m_TargetAssemblyTypeName: Carga, Assembly-CSharp
         m_MethodName: ValidarCarga
         m_Mode: 1
@@ -57363,7 +57380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fc55f10f6118624b89e245cc3b90adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuente: {fileID: 792040150}
+  fuente: {fileID: 1933086309}
   clip: {fileID: 8300000, guid: 3efdbb3f5214bce47ba36dc22ffb6183, type: 3}
 --- !u!1 &1938849224
 GameObject:
