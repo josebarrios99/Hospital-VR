@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Carga : MonoBehaviour
 {
-    public Text texto;
+    public TMP_Text texto;
     private int numero = 0;
     private bool sumar = false;
     private bool restar = false;
@@ -51,10 +52,11 @@ public class Carga : MonoBehaviour
     }
     public void ValidarCarga()
     {
-        Debug.Log("Estamos Validando Carga");
         if (numero == 200)
         {
             _controladorRubrica.ActualizarRubrica(9);
+            
+            Debug.Log("Se elige una carga de 200J");
         }
     }
     public void ReiniciarCarga()

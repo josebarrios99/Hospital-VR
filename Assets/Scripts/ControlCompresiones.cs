@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ControlCompresiones : MonoBehaviour
 {
-    public Text texto;
+    public TMP_Text texto;
     public bool aumentaEn10;
     private int numero = 0;
     private bool sumar = false;
@@ -35,7 +36,8 @@ public class ControlCompresiones : MonoBehaviour
     void ActualizarTexto()
     {
         // Actualizar el texto con el n�mero actual
-        texto.text = "" + numero.ToString();
+        if(texto)
+            texto.text = "" + numero.ToString();
     }
     
     public void Reiniciar()

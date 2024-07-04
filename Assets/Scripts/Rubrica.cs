@@ -11,9 +11,9 @@ public class Rubrica : MonoBehaviour
     [SerializeField] TextMeshProUGUI textoCondiciones;
     
     //medicamentos
-    public Text inputDosis;
-    public TMP_InputField inputFrecuencia;
-    public TMP_InputField inputProfundidad;
+    public TMP_Text inputDosis;
+    // public TMP_InputField inputFrecuencia;
+    // public TMP_InputField inputProfundidad;
 
     private int dosisMinima = 70;
     private int dosisMaxima = 100;
@@ -61,36 +61,12 @@ public class Rubrica : MonoBehaviour
             botonesPulso[i].onClick.AddListener(delegate { ValidarOrdenBotonPulso(indiceBoton); });
         }
     }
-    // public void MostrarResultados()
-    // {
-    //     int totalCondiciones = condiciones.Count;
-    //     int condicionesCumplidas = 0;
-    //
-    //     string texto = "Condiciones cumplidas:\n";
-    //
-    //     for (int i = 0; i < totalCondiciones; i++)
-    //     {
-    //         if (condiciones[i])
-    //         {
-    //             texto += "- " + nombresCondiciones[i] + "\n";
-    //             condicionesCumplidas++;
-    //         }
-    //     }
-    //
-    //     float porcentajeCumplidas = ((float)condicionesCumplidas / totalCondiciones) * 100f;
-    //     texto += "Porcentaje de condiciones cumplidas: " + porcentajeCumplidas.ToString("F2") + "%";
-    //
-    //     // Mostrar el texto actualizado en el objeto de texto
-    //     textoCondiciones.text = texto;
-    // }
     public void ValidarInput()
     {
         DosisSeleccionada = inputDosis.text;
         int numeroIngresado;
         Medicamento? UltimoMedicamentoSeleccionado = _controladorRubrica.GetUltimoMedicamentoSeleccionado();
-        Debug.Log($"Ultimo Medicamento Seleccionado: {UltimoMedicamentoSeleccionado}");
-        Debug.Log($"Cantidad a Administrar: {DosisSeleccionada}");
-        Debug.Log($"Dosis Confirmada?: {confirmarDosis}");
+        controlador.nuevoCiclo($"Se aplica {UltimoMedicamentoSeleccionado} - Dosis: {DosisSeleccionada}");
         switch (UltimoMedicamentoSeleccionado)
         {
             case Medicamento.Adrenalina:
@@ -121,30 +97,30 @@ public class Rubrica : MonoBehaviour
                 break;
         }
     }
-    public void ValidarInputFrecuencia()
-    {
-        int numeroIngresado;
-
-        if (int.TryParse(inputFrecuencia.text, out numeroIngresado))
-        {
-            if (numeroIngresado >= frecuenciaMin && numeroIngresado <= frecuenciaMax)
-                _controladorRubrica.ActualizarRubrica(3);
-            else
-                _controladorRubrica.ActualizarRubrica(3,false);
-        }
-    }
-    public void ValidarInputProfundidad()
-    {
-        int numeroIngresado;
-
-        if (int.TryParse(inputProfundidad.text, out numeroIngresado))
-        {
-            if (numeroIngresado >= profundidadMin && numeroIngresado <= profundidadMax)
-                _controladorRubrica.ActualizarRubrica(4);
-            else
-                _controladorRubrica.ActualizarRubrica(4,false);
-        }
-    }
+    // public void ValidarInputFrecuencia()
+    // {
+    //     int numeroIngresado;
+    //
+    //     if (int.TryParse(inputFrecuencia.text, out numeroIngresado))
+    //     {
+    //         if (numeroIngresado >= frecuenciaMin && numeroIngresado <= frecuenciaMax)
+    //             _controladorRubrica.ActualizarRubrica(3);
+    //         else
+    //             _controladorRubrica.ActualizarRubrica(3,false);
+    //     }
+    // }
+    // public void ValidarInputProfundidad()
+    // {
+    //     int numeroIngresado;
+    //
+    //     if (int.TryParse(inputProfundidad.text, out numeroIngresado))
+    //     {
+    //         if (numeroIngresado >= profundidadMin && numeroIngresado <= profundidadMax)
+    //             _controladorRubrica.ActualizarRubrica(4);
+    //         else
+    //             _controladorRubrica.ActualizarRubrica(4,false);
+    //     }
+    // }
     public void SeleccionarAdrenalina()
     {
         _controladorRubrica.OnMedicamentoSeleccionado();
@@ -197,16 +173,15 @@ public class Rubrica : MonoBehaviour
     }
     void ValidarOrdenBotonDescarga(int indiceBoton)
     {
-        Debug.Log("Descarga true");
-        Debug.Log($"Indice Btn {indiceBoton}");
-        Debug.Log($"Indice Sig Descarga {indiceSiguienteDescarga}");
-        
         if (indiceBoton == secuenciaDescarga[indiceSiguienteDescarga])
         {
             indiceSiguienteDescarga++;
-        
+
             if (indiceSiguienteDescarga >= secuenciaDescarga.Count)
+            {
+                controlador.nuevoCiclo("Se hizo una descarga");
                 _controladorRubrica.ActualizarRubrica(11);
+            }
         }
         else
         {

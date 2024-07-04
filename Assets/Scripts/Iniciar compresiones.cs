@@ -35,6 +35,7 @@ public class Iniciarcompresiones : MonoBehaviour
             if (TiempoCompresiones >= TimeToUpdate)
             {
                 _controladorRubrica.ActualizarRubrica(5);
+                controlador.nuevoCiclo("Compresiones Pesentes el 60% del tiempo");
             }
         }
     }
@@ -54,10 +55,11 @@ public class Iniciarcompresiones : MonoBehaviour
         if (controlador.pulso == true)
         {
             _controladorRubrica.ActualizarRubrica(6, false);
+            
+            Debug.Log("Se realizan compresiones cuando el paciente tiene pulso");
         }
         CompresionesIniciadas = true;
         anim.SetBool("Iniciar compresiones", true);
-        Debug.Log("Se inician Compresiones");
         controlador.nuevoCiclo("Iniciar compresiones");
         
     }
@@ -184,7 +186,6 @@ public class Iniciarcompresiones : MonoBehaviour
     }
     public void descarga()
     {
-        controlador.nuevoCiclo("Se hizo una descarga");
         if (controlador.pulso == true)
         {
             _controladorRubrica.ActualizarRubrica(12,false);
@@ -197,12 +198,10 @@ public class Iniciarcompresiones : MonoBehaviour
     public void detenerDesfibrilador()
     {
         anim.SetBool("Desfibrilador", false);
-        controlador.nuevoCiclo("Se Detiene Desfibrilacion");
     }
     public void detenerDesfibrilador2()
     {
         anim.SetBool("Desfibrilador 2", false);
-        controlador.nuevoCiclo("Se Detiene Desfibrilacion");
     }
     public void tomarPresion()
     {
