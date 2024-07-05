@@ -27155,7 +27155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ContenedorRubrica: {fileID: 1436997447}
   PrefabCondicion: {fileID: 577691350567411121, guid: dda7dcd66081aac4b88049eb9cf14708, type: 3}
-  RubricaSo: {fileID: 11400000, guid: 21dbea287d9ce0b4f9e9697ab2d66abb, type: 2}
+  RubricaSo: {fileID: 11400000, guid: 7c1e337baee198749ba85b2761c1341c, type: 2}
 --- !u!1 &807444665
 GameObject:
   m_ObjectHideFlags: 0
@@ -54979,7 +54979,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.9
+  m_fontSize: 46.1
   m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 1
