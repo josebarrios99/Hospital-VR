@@ -38,6 +38,7 @@ public class ObjetoInteractivo : MonoBehaviour
     void Start()
     {
         ControladorJugador = jugador.GetComponent<PlayerController>();
+        controlador = FindObjectOfType<Controladoracciones>();
         mostrarObjeto.SetActive(false);
     }
     private IEnumerator delayMenu() {
@@ -53,7 +54,6 @@ public class ObjetoInteractivo : MonoBehaviour
     {
         StartCoroutine(delayMenu());
     }
-    
 
     public void MostrarObjeto()
     {
@@ -80,12 +80,12 @@ public class ObjetoInteractivo : MonoBehaviour
     }
     public void TextoTorax()
     {
-        if (toraxParo == false)
+        if (!controladorCompresiones.tienePulso())
         {
             textoTorax.SetActive(true);
             Invoke("DuracionTexto", 6);
         }
-        if (toraxParo == true)
+        else
         {
             textoToraxFinal.SetActive(true); ;
             Invoke("DuracionTexto", 6);
@@ -94,12 +94,12 @@ public class ObjetoInteractivo : MonoBehaviour
     }
     public void TextoSaturacion()
     {
-        if (saturacionParo == false)
+        if (!controladorCompresiones.tienePulso())
         {
             textoSaturacion.SetActive(true);
             Invoke("DuracionTexto", 4);
         }
-        if (saturacionParo == true)
+        else
         {
             textoSaturacionFinal.SetActive(true);
             Invoke("DuracionTexto", 4);
@@ -107,12 +107,12 @@ public class ObjetoInteractivo : MonoBehaviour
     }
     public void TextoPresion()
     {
-        if (presionParo == false)
+        if (!controladorCompresiones.tienePulso())
         {
             textoPresion.SetActive(true);
             Invoke("DuracionTexto", 4);
         }
-        if(presionParo == true)
+        else
         {
             textoPresionFinal.SetActive(true);
             Invoke("DuracionTexto", 4);

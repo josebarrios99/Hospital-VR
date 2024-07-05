@@ -39,11 +39,13 @@ public class Carga : MonoBehaviour
     private void OnDisable()
     {
         On = false;
+        texto.text = "0";
     }
 
     public void TurnOn()
     {
         On = true;
+        texto.text = "0";
     }
     void ActualizarTexto()
     {
