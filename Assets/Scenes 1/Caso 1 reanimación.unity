@@ -7525,7 +7525,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 9999999
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a980c4c24801f2d41b93269eec888550, type: 2}
   m_sharedMaterial: {fileID: -5392380389621119328, guid: a980c4c24801f2d41b93269eec888550, type: 2}
@@ -58178,7 +58178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b009000f51dd6439974f19aa6fd772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texto: {fileID: 0}
+  texto: {fileID: 414350198}
   aumentaEn10: 0
   _controladorRubrica: {fileID: 0}
 --- !u!1 &1948411504
