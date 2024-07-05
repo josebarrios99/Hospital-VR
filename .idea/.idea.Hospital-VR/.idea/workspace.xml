@@ -5,18 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6259c415-7f52-49d7-be91-5a9802bba8b8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Hospital-VR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hospital-VR/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI/Fonts/negrita.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/UI/Fonts/negrita.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI/Fonts/normal.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/UI/Fonts/normal.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Oculus/OculusProjectConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Oculus/OculusProjectConfig.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/AndroidManifest.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/AndroidManifest.xml.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes 1/Caso 1 reanimación.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes 1/Caso 1 reanimación.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Carga.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Carga.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ControlCompresiones.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ControlCompresiones.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Iniciar compresiones.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Iniciar compresiones.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rubrica.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rubrica.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/H_diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/H_diffuse.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/No Name.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/No Name.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/bilboard.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/bilboard.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/border.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/border.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/elevator.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/elevator.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/elevator_light.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/elevator_light.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/entrance.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/entrance.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/entrance_glass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/entrance_glass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/ex_wall_2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/ex_wall_2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/ex_wall_4.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/ex_wall_4.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/grass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/grass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/gray.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/gray.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/metal.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/metal.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/white.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/Environment/Materials/white.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/characters/models/Materials/clothes 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/characters/models/Materials/clothes 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/characters/models/Materials/clothes 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/characters/models/Materials/clothes 2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/Bed.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/Bed.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/Chair_2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/Chair_2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/X-ray.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/X-ray.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/X-ray_screen_1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/X-ray_screen_1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/X-ray_screen_2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/X-ray_screen_2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/anesthesia.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/anesthesia.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/anesthesia_2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/anesthesia_2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/anesthesia_glass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/anesthesia_glass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/armchair.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/armchair.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/cap.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/cap.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/chair.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/chair.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/leaf.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/leaf.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/morgue_props_1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/morgue_props_1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/operating_lamp.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/operating_lamp.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/operating_lamp_glass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/operating_lamp_glass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/operating_lamp_light.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/operating_lamp_light.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/operating_lamp_metal_light.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/operating_lamp_metal_light.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/operating_lamp_screen.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/operating_lamp_screen.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/sit_wheelchair.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/sit_wheelchair.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/test_tube.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/test_tube.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/transfusion.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/transfusion.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/truck.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Hospital - modular building, props and characters/models/props/Materials/truck.mat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,26 +72,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feat__Release__Upates",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.sync",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat__Release__Upates&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\elsuf\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\elsuf\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\elsuf\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\elsuf\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\elsuf\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\elsuf\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Standalone Player.Start Unity">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="D:\2022.3.10f1\Editor\Unity.exe" />
@@ -126,6 +152,7 @@
       <workItem from="1719671875273" duration="4928000" />
       <workItem from="1719688878622" duration="4479000" />
       <workItem from="1720051889273" duration="3679000" />
+      <workItem from="1720207456655" duration="814000" />
     </task>
     <servers />
   </component>
