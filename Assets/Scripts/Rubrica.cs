@@ -157,13 +157,17 @@ public class Rubrica : MonoBehaviour
     }
     void ValidarOrdenBoton(int indiceBoton)
     {
-        if (indiceBoton == secuenciaPaciente[indiceSiguientePaciente])
+        if (!controlador.tienePulso())
         {
-            indiceSiguientePaciente++;
-            _controladorRubrica.ActualizarRubrica(0);
-            controlador.nuevoCiclo("Llamar paciente");
-
-            if (indiceSiguientePaciente >= secuenciaPaciente.Count)
+            Debug.Log("Se Toma Pulso 1");
+            // Debug.Log($"Indice Siguiente Paciente {indiceSiguientePaciente}");
+            if (indiceBoton == 0)
+            {
+                indiceSiguientePaciente++;
+                _controladorRubrica.ActualizarRubrica(0);
+                controlador.nuevoCiclo("Llamar paciente");
+            }
+            else
             {
                 _controladorRubrica.ActualizarRubrica(1);
                 controlador.nuevoCiclo("Se tom? el pulso");
@@ -190,6 +194,7 @@ public class Rubrica : MonoBehaviour
     }
     void ValidarOrdenBotonPulso(int indiceBoton)
     {
+        Debug.Log("Se Toma Pulso 2");
         if (indiceBoton == secuenciaPulso[indiceSiguientePulso] && controlador.tienePulso())
         {
             // La acción es en el orden correcto
