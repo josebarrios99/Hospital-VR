@@ -21,10 +21,6 @@ public class ControlCompresiones : MonoBehaviour
         _controladorRubrica = ControladorRubrica.instance;
         ActualizarTexto();
     }
-    void Update()
-    {
-
-    }
     public void aumentarDosisEn10()
     {
         aumentaEn10 = true;

@@ -169,7 +169,6 @@ public class Rubrica : MonoBehaviour
                 controlador.nuevoCiclo("Se tom? el pulso");
             }
         }
-        
     }
     void ValidarOrdenBotonDescarga(int indiceBoton)
     {
@@ -191,7 +190,7 @@ public class Rubrica : MonoBehaviour
     }
     void ValidarOrdenBotonPulso(int indiceBoton)
     {
-        if (indiceBoton == secuenciaPulso[indiceSiguientePulso] && FindObjectOfType<Controladoracciones>().pulso == true)
+        if (indiceBoton == secuenciaPulso[indiceSiguientePulso] && controlador.tienePulso())
         {
             // La acción es en el orden correcto
             Debug.Log("Acción " + indiceBoton + " realizada correctamente.");

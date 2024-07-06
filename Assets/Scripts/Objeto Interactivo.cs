@@ -25,7 +25,6 @@ public class ObjetoInteractivo : MonoBehaviour
     public GameObject posicionCompresiones;
     public GameObject compresorInicial;
 
-    public Iniciarcompresiones controladorCompresiones;
     public Controladoracciones controlador;
 
     public bool presionParo;
@@ -66,7 +65,7 @@ public class ObjetoInteractivo : MonoBehaviour
 
     public void TextoPulso()
     {
-        if (controladorCompresiones.tienePulso())
+        if (controlador.tienePulso())
         {
             textoPulsoFinal.SetActive(true);
             Invoke("DuracionTexto", 2);
@@ -80,7 +79,7 @@ public class ObjetoInteractivo : MonoBehaviour
     }
     public void TextoTorax()
     {
-        if (!controladorCompresiones.tienePulso())
+        if (!controlador.tienePulso())
         {
             textoTorax.SetActive(true);
             Invoke("DuracionTexto", 6);
@@ -94,7 +93,7 @@ public class ObjetoInteractivo : MonoBehaviour
     }
     public void TextoSaturacion()
     {
-        if (!controladorCompresiones.tienePulso())
+        if (!controlador.tienePulso())
         {
             textoSaturacion.SetActive(true);
             Invoke("DuracionTexto", 4);
@@ -107,7 +106,7 @@ public class ObjetoInteractivo : MonoBehaviour
     }
     public void TextoPresion()
     {
-        if (!controladorCompresiones.tienePulso())
+        if (!controlador.tienePulso())
         {
             textoPresion.SetActive(true);
             Invoke("DuracionTexto", 4);
@@ -164,7 +163,6 @@ public class ObjetoInteractivo : MonoBehaviour
     }
     public void definirEstado(int estado)
     {
-        
         this.estado = estado;
     }
     public void DuracionTexto()

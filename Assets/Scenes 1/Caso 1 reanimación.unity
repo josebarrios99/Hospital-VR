@@ -7577,7 +7577,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 409700184}
   m_LocalRotation: {x: -0, y: -0.00000005960465, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.001295}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7587,7 +7587,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -561.2498, y: -151.25}
+  m_AnchoredPosition: {x: -708, y: -151.25}
   m_SizeDelta: {x: 1122.5, y: 233}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &414350196
@@ -8169,7 +8169,6 @@ MonoBehaviour:
   mostrarObjeto: {fileID: 1217873829}
   posicionCompresiones: {fileID: 0}
   compresorInicial: {fileID: 0}
-  controladorCompresiones: {fileID: 0}
   controlador: {fileID: 0}
   presionParo: 0
   toraxParo: 0
@@ -12158,6 +12157,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OVRControllerPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 112276, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 488160, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -12364,10 +12367,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 112276, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 525436548}
+      addedObject: {fileID: 525436547}
     - targetCorrespondingSourceObject: {fileID: 112276, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 525436547}
+      addedObject: {fileID: 525436548}
   m_SourcePrefab: {fileID: 100100000, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
 --- !u!4 &525436545 stripped
 Transform:
@@ -15495,7 +15498,6 @@ MonoBehaviour:
   mostrarObjeto: {fileID: 1845789867}
   posicionCompresiones: {fileID: 0}
   compresorInicial: {fileID: 0}
-  controladorCompresiones: {fileID: 0}
   controlador: {fileID: 0}
   presionParo: 0
   toraxParo: 0
@@ -18681,7 +18683,6 @@ MonoBehaviour:
   mostrarObjeto: {fileID: 1217873829}
   posicionCompresiones: {fileID: 834319091}
   compresorInicial: {fileID: 1439647958}
-  controladorCompresiones: {fileID: 0}
   controlador: {fileID: 1325493397}
   presionParo: 0
   toraxParo: 0
@@ -21654,7 +21655,6 @@ MonoBehaviour:
   mostrarObjeto: {fileID: 1217873829}
   posicionCompresiones: {fileID: 0}
   compresorInicial: {fileID: 0}
-  controladorCompresiones: {fileID: 0}
   controlador: {fileID: 1325493397}
   presionParo: 0
   toraxParo: 0
@@ -27029,7 +27029,6 @@ MonoBehaviour:
   mostrarObjeto: {fileID: 0}
   posicionCompresiones: {fileID: 0}
   compresorInicial: {fileID: 0}
-  controladorCompresiones: {fileID: 0}
   controlador: {fileID: 0}
   presionParo: 0
   toraxParo: 0
@@ -29787,7 +29786,6 @@ MonoBehaviour:
   mostrarObjeto: {fileID: 1217873829}
   posicionCompresiones: {fileID: 0}
   compresorInicial: {fileID: 0}
-  controladorCompresiones: {fileID: 0}
   controlador: {fileID: 0}
   presionParo: 0
   toraxParo: 0
@@ -32486,7 +32484,6 @@ MonoBehaviour:
   mostrarObjeto: {fileID: 1217873829}
   posicionCompresiones: {fileID: 0}
   compresorInicial: {fileID: 0}
-  controladorCompresiones: {fileID: 0}
   controlador: {fileID: 0}
   presionParo: 0
   toraxParo: 0
@@ -35387,7 +35384,6 @@ MonoBehaviour:
   mostrarObjeto: {fileID: 1568512905}
   posicionCompresiones: {fileID: 0}
   compresorInicial: {fileID: 0}
-  controladorCompresiones: {fileID: 0}
   controlador: {fileID: 0}
   presionParo: 0
   toraxParo: 0
@@ -41399,7 +41395,6 @@ MonoBehaviour:
   mostrarObjeto: {fileID: 1217873829}
   posicionCompresiones: {fileID: 444815176}
   compresorInicial: {fileID: 1213792485}
-  controladorCompresiones: {fileID: 0}
   controlador: {fileID: 1325493397}
   presionParo: 0
   toraxParo: 0
@@ -46610,7 +46605,6 @@ MonoBehaviour:
   mostrarObjeto: {fileID: 1568512905}
   posicionCompresiones: {fileID: 0}
   compresorInicial: {fileID: 0}
-  controladorCompresiones: {fileID: 1394827580}
   controlador: {fileID: 1325493397}
   presionParo: 0
   toraxParo: 0
@@ -49417,7 +49411,6 @@ MonoBehaviour:
   mostrarObjeto: {fileID: 1217873829}
   posicionCompresiones: {fileID: 834319091}
   compresorInicial: {fileID: 1439647958}
-  controladorCompresiones: {fileID: 0}
   controlador: {fileID: 1325493397}
   presionParo: 0
   toraxParo: 0
@@ -50739,7 +50732,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547705456}
   m_LocalRotation: {x: -0, y: -0.00000005960465, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0026993752}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -50748,7 +50741,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 558.1, y: -121.8999}
+  m_AnchoredPosition: {x: 411.35056, y: -121.8999}
   m_SizeDelta: {x: 1116.1, y: 243.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1554952615
