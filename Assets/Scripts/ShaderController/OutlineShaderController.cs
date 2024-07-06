@@ -39,15 +39,19 @@ public class OutlineShaderController : MonoBehaviour
             }
         }
         else
-            foreach (var Mesh in SkinedMeshesArray)
-            {
-                Material[] Materials = Mesh.materials;
-
-                if (Materials.Length > 1)
+        {
+            if(SkinedMeshesArray.Length > 0)
+                foreach (var Mesh in SkinedMeshesArray)
                 {
-                    Mesh.materials = new []{Materials[0]};
+                    Material[] Materials = Mesh.materials;
+
+                    if (Materials.Length > 1)
+                    {
+                        Mesh.materials = new []{Materials[0]};
+                    }
                 }
-            }
+        }
+            
         if(CharacterName)
             CharacterName.SetActive(false);
     }
@@ -55,18 +59,21 @@ public class OutlineShaderController : MonoBehaviour
     public void SetOutlines()
     {
         if (Model.name == "Body")
-            {
-                Material[] Materials = MeshesArray.materials;
-                
-                MeshesArray.materials = Materials.Concat(new []{OutlineMaterial}).ToArray();
-            }
+        {
+            Material[] Materials = MeshesArray.materials;
+            
+            MeshesArray.materials = Materials.Concat(new []{OutlineMaterial}).ToArray();
+        }
         else
-            foreach (var Mesh in SkinedMeshesArray)
-            {
-                Material[] Materials = Mesh.materials;
-                
-                Mesh.materials = Materials.Concat(new []{OutlineMaterial}).ToArray();
-            }
+        {
+            if(SkinedMeshesArray != null)
+                foreach (var Mesh in SkinedMeshesArray)
+                {
+                    Material[] Materials = Mesh.materials;
+                    
+                    Mesh.materials = Materials.Concat(new []{OutlineMaterial}).ToArray();
+                }
+        }
         if(CharacterName)
             CharacterName.SetActive(true);
     }
