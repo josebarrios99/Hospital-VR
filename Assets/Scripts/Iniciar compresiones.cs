@@ -183,13 +183,10 @@ public class Iniciarcompresiones : MonoBehaviour
     public void descarga()
     {
         controlador.nuevoCiclo("Se hizo una descarga");
-        {
+        if(controlador.pulso)
             _controladorRubrica.ActualizarRubrica(12,false);
-        }
-        if (controlador.pulso == false)
-        {
+        else
             _controladorRubrica.ActualizarRubrica(10);
-        }
     }
     public void detenerDesfibrilador()
     {

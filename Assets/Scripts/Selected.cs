@@ -34,7 +34,7 @@ public class Selected : MonoBehaviour
 
             if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, mask))
             {
-                distancia = Vector3.Distance(transform.position,hit.transform.position);
+                // distancia = Vector3.Distance(transform.position,hit.transform.position);
                 Deselect();
                 SelectedObject(hit.transform);
                 ObjetoInteractivo hitObjetoInteractivo = hit.collider.transform.GetComponent<ObjetoInteractivo>();
@@ -50,7 +50,7 @@ public class Selected : MonoBehaviour
                         activarRaycast=false;
                     }
                 }
-                else if (hit.collider.tag == "Ventilaciones")
+                if (hit.collider.tag == "Ventilaciones")
                 {
                     if(hitOutlineController)
                         hitOutlineController.SetOutlines();
@@ -60,7 +60,7 @@ public class Selected : MonoBehaviour
                        activarRaycast = false;
                     }
                 }
-                else if (hit.collider.tag == "Ayudante")
+                if (hit.collider.tag == "Ayudante")
                 {
                     if(hitOutlineController)
                         hitOutlineController.SetOutlines();
@@ -71,7 +71,7 @@ public class Selected : MonoBehaviour
                     }
 
                 }
-                else if (hit.collider.tag == "Lista")
+                if (hit.collider.tag == "Lista")
                 {
                     if(hitOutlineController)
                         hitOutlineController.SetOutlines();
@@ -82,7 +82,7 @@ public class Selected : MonoBehaviour
                     }
 
                 }
-                else if (hit.collider.tag == "Paciente")
+                if (hit.collider.tag == "Paciente")
                 {
                     if(hitOutlineController)
                         hitOutlineController.SetOutlines();
