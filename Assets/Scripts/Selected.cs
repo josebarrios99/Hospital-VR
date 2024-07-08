@@ -34,6 +34,7 @@ public class Selected : MonoBehaviour
 
             if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, mask))
             {
+                distancia = Vector3.Distance(transform.position,hit.transform.position);
                 Deselect();
                 SelectedObject(hit.transform);
                 ObjetoInteractivo hitObjetoInteractivo = hit.collider.transform.GetComponent<ObjetoInteractivo>();
@@ -49,7 +50,7 @@ public class Selected : MonoBehaviour
                         activarRaycast=false;
                     }
                 }
-                if (hit.collider.tag == "Ventilaciones")
+                else if (hit.collider.tag == "Ventilaciones")
                 {
                     if(hitOutlineController)
                         hitOutlineController.SetOutlines();
@@ -59,7 +60,7 @@ public class Selected : MonoBehaviour
                        activarRaycast = false;
                     }
                 }
-                if (hit.collider.tag == "Ayudante")
+                else if (hit.collider.tag == "Ayudante")
                 {
                     if(hitOutlineController)
                         hitOutlineController.SetOutlines();
@@ -70,7 +71,7 @@ public class Selected : MonoBehaviour
                     }
 
                 }
-                if (hit.collider.tag == "Lista")
+                else if (hit.collider.tag == "Lista")
                 {
                     if(hitOutlineController)
                         hitOutlineController.SetOutlines();
@@ -81,7 +82,7 @@ public class Selected : MonoBehaviour
                     }
 
                 }
-                if (hit.collider.tag == "Paciente")
+                else if (hit.collider.tag == "Paciente")
                 {
                     if(hitOutlineController)
                         hitOutlineController.SetOutlines();
@@ -92,7 +93,7 @@ public class Selected : MonoBehaviour
                         activarRaycast = false;
                     }
                 }
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * distancia, Color.red);
+                // Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * distancia);
             }
             else
             {

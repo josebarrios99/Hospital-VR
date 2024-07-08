@@ -48,6 +48,8 @@ public class Controladoracciones : MonoBehaviour
             {
                 ControladorJugador.CantMove = true;
                 pantallaFinal.SetActive(true);
+                bool medicamentosUtilizados = _controladorRubrica.MedicamentosUtilizadosCorrectos();
+                _controladorRubrica.ActualizarRubrica(20,medicamentosUtilizados);
             }
         }
     }

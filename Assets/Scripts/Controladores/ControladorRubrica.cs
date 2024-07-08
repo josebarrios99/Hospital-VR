@@ -29,7 +29,8 @@ public class ControladorRubrica : MonoBehaviour
     public int? UltimaCondicion => ultimaCondicion;
 
     private Medicamento? primerMedicamento = null;
-    private Medicamento? UltimoMedicamentoSeleccionado = null;
+    private Medicamento UltimoMedicamentoSeleccionado;
+    private List<Medicamento> ListaDeMEdicamentosUtilizados;
 
     private List<CondicionUI> Condiciones = new List<CondicionUI>();
     
@@ -95,6 +96,7 @@ public class ControladorRubrica : MonoBehaviour
 
     public void CrearRubrica()
     {
+        ListaDeMEdicamentosUtilizados = new List<Medicamento>();
         Condicion[] Rubrica = ObtenerCondiciones();
 
         foreach (var condicion in Rubrica)
@@ -121,10 +123,30 @@ public class ControladorRubrica : MonoBehaviour
         if (primerMedicamento == null)
             primerMedicamento = _Medicamento;
         UltimoMedicamentoSeleccionado = _Medicamento;
+        UseMedicamento();
     }
 
     public Medicamento? GetUltimoMedicamentoSeleccionado()
     {
         return UltimoMedicamentoSeleccionado;
+    }
+
+    public bool MedicamentosUtilizadosCorrectos()
+    {
+        foreach (var medicamento in ListaDeMEdicamentosUtilizados)
+        {
+            switch (medicamento)
+            {
+                case Medicamento.Noradrenalina:
+                case Medicamento.SulfatoDeMagnesio:
+                case Medicamento.Atropina:
+                    return false;
+            }
+        }
+        return true;
+    }
+    public void UseMedicamento()
+    {
+        ListaDeMEdicamentosUtilizados.Add(UltimoMedicamentoSeleccionado);
     }
 }

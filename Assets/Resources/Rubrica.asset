@@ -91,23 +91,7 @@ MonoBehaviour:
     success: 0
     mistake: 0
   - id: 19
-    descripcion: Si administra amiodarona la dosis es 300mg
-    success: 0
-    mistake: 0
-  - id: 20
-    descripcion: Si administra lidocaina la dosis es entre 70 y 100mg
-    success: 0
-    mistake: 0
-  - id: 21
     descripcion: La via elegida siempre es intra venosa
-    success: 0
-    mistake: 0
-  - id: 22
-    descripcion: Si administra amiodarona no puede ser antes de 6 minutos
-    success: 0
-    mistake: 0
-  - id: 23
-    descripcion: Si administra lidocaina no puede ser antes de 6 minutos
     success: 0
     mistake: 0
   - id: 24

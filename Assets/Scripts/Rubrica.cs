@@ -76,19 +76,19 @@ public class Rubrica : MonoBehaviour
                     _controladorRubrica.ActualizarRubrica(18, false);
                 break;
             case Medicamento.Amiodarona:
-                if (DosisSeleccionada == "300" && confirmarDosis == true)
-                    _controladorRubrica.ActualizarRubrica(19);
-                else
-                    _controladorRubrica.ActualizarRubrica(19, false);
+                // if (DosisSeleccionada == "300" && confirmarDosis == true)
+                //     _controladorRubrica.ActualizarRubrica(19);
+                // else
+                //     _controladorRubrica.ActualizarRubrica(19, false);
                 break;
             case Medicamento.Lidocaina:
-                if (int.TryParse(DosisSeleccionada, out numeroIngresado) && confirmarDosis == true)
-                {
-                    if (numeroIngresado >= dosisMinima && numeroIngresado <= dosisMaxima)
-                        _controladorRubrica.ActualizarRubrica(20);
-                    else
-                        _controladorRubrica.ActualizarRubrica(20, false);
-                }
+                // if (int.TryParse(DosisSeleccionada, out numeroIngresado) && confirmarDosis == true)
+                // {
+                //     if (numeroIngresado >= dosisMinima && numeroIngresado <= dosisMaxima)
+                //         _controladorRubrica.ActualizarRubrica(20);
+                //     else
+                //         _controladorRubrica.ActualizarRubrica(20, false);
+                // }
                 break;
             case Medicamento.Atropina:
             case Medicamento.Noradrenalina:
@@ -182,7 +182,6 @@ public class Rubrica : MonoBehaviour
 
             if (indiceSiguienteDescarga >= secuenciaDescarga.Count)
             {
-                controlador.nuevoCiclo("Se hizo una descarga");
                 _controladorRubrica.ActualizarRubrica(11);
             }
         }
