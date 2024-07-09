@@ -725,14 +725,19 @@ MonoBehaviour:
   textoPulsoFinal: {fileID: 0}
   textoRespuesta: {fileID: 0}
   textoPresion: {fileID: 0}
+  textoPresionFinal: {fileID: 0}
   textoSaturacion: {fileID: 0}
+  textoSaturacionFinal: {fileID: 0}
   textoTorax: {fileID: 0}
+  textoToraxFinal: {fileID: 0}
   jugador: {fileID: 21878731}
   mostrarObjeto: {fileID: 1282457196}
   posicionCompresiones: {fileID: 0}
   compresorInicial: {fileID: 0}
-  controladorCompresiones: {fileID: 0}
   controlador: {fileID: 0}
+  presionParo: 0
+  toraxParo: 0
+  saturacionParo: 0
   estado: 0
 --- !u!1001 &106131975
 PrefabInstance:
@@ -1244,7 +1249,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -2185,7 +2191,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -5332,7 +5339,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5409,14 +5416,19 @@ MonoBehaviour:
   textoPulsoFinal: {fileID: 0}
   textoRespuesta: {fileID: 0}
   textoPresion: {fileID: 0}
+  textoPresionFinal: {fileID: 0}
   textoSaturacion: {fileID: 0}
+  textoSaturacionFinal: {fileID: 0}
   textoTorax: {fileID: 0}
+  textoToraxFinal: {fileID: 0}
   jugador: {fileID: 0}
   mostrarObjeto: {fileID: 0}
   posicionCompresiones: {fileID: 0}
   compresorInicial: {fileID: 0}
-  controladorCompresiones: {fileID: 0}
   controlador: {fileID: 0}
+  presionParo: 0
+  toraxParo: 0
+  saturacionParo: 0
   estado: 0
 --- !u!1001 &801857577
 PrefabInstance:
@@ -8196,14 +8208,19 @@ MonoBehaviour:
   textoPulsoFinal: {fileID: 0}
   textoRespuesta: {fileID: 0}
   textoPresion: {fileID: 0}
+  textoPresionFinal: {fileID: 0}
   textoSaturacion: {fileID: 0}
+  textoSaturacionFinal: {fileID: 0}
   textoTorax: {fileID: 0}
+  textoToraxFinal: {fileID: 0}
   jugador: {fileID: 0}
   mostrarObjeto: {fileID: 0}
   posicionCompresiones: {fileID: 0}
   compresorInicial: {fileID: 0}
-  controladorCompresiones: {fileID: 0}
   controlador: {fileID: 0}
+  presionParo: 0
+  toraxParo: 0
+  saturacionParo: 0
   estado: 0
 --- !u!64 &1282457198
 MeshCollider:
@@ -8802,14 +8819,19 @@ MonoBehaviour:
   textoPulsoFinal: {fileID: 0}
   textoRespuesta: {fileID: 0}
   textoPresion: {fileID: 0}
+  textoPresionFinal: {fileID: 0}
   textoSaturacion: {fileID: 0}
+  textoSaturacionFinal: {fileID: 0}
   textoTorax: {fileID: 0}
+  textoToraxFinal: {fileID: 0}
   jugador: {fileID: 0}
   mostrarObjeto: {fileID: 0}
   posicionCompresiones: {fileID: 0}
   compresorInicial: {fileID: 0}
-  controladorCompresiones: {fileID: 0}
   controlador: {fileID: 0}
+  presionParo: 0
+  toraxParo: 0
+  saturacionParo: 0
   estado: 0
 --- !u!65 &1394827572
 BoxCollider:

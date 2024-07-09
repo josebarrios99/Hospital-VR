@@ -27,14 +27,12 @@ public class Selected : MonoBehaviour
     
     void Update()
     {
-
-           if (activarRaycast == true)
+        if (activarRaycast == true)
         {
             RaycastHit hit;
 
             if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, mask))
             {
-                // distancia = Vector3.Distance(transform.position,hit.transform.position);
                 Deselect();
                 SelectedObject(hit.transform);
                 ObjetoInteractivo hitObjetoInteractivo = hit.collider.transform.GetComponent<ObjetoInteractivo>();
