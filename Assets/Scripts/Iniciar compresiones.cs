@@ -15,9 +15,9 @@ public class Iniciarcompresiones : MonoBehaviour
     [SerializeField] private ControladorRubrica _controladorRubrica;
 
     [SerializeField] private Crono ControladorTiempo;
-    
-    private bool CompresionesIniciadas = false;
-    private float TiempoCompresiones = 0.0f;
+
+    private bool EnCompresionesOne = false;
+    private bool EnCompresionesTwo = false;
     void Start()
     {
         _controladorRubrica = ControladorRubrica.instance;
@@ -26,19 +26,7 @@ public class Iniciarcompresiones : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
     }
     
-    private void FixedUpdate()
-    {
-        if (CompresionesIniciadas && !controlador.pulso)
-        {
-            TiempoCompresiones += Time.deltaTime;
-            float TimeToUpdate = 360f;
-            if (TiempoCompresiones >= TimeToUpdate)
-            {
-                _controladorRubrica.ActualizarRubrica(5);
-                controlador.nuevoCiclo("Compresiones Pesentes el 60% del tiempo");
-            }
-        }
-    }
+    
     // Update is called once per frame
 
     public bool tienePulso()
@@ -48,6 +36,7 @@ public class Iniciarcompresiones : MonoBehaviour
     
     public void iniciarCompresiones()
     {
+        EnCompresionesOne = true;
         if (ControladorTiempo.getTiempoSec() <= 30f)
         {
             _controladorRubrica.ActualizarRubrica(2);
@@ -58,13 +47,13 @@ public class Iniciarcompresiones : MonoBehaviour
             
             Debug.Log("Se realizan compresiones cuando el paciente tiene pulso");
         }
-        CompresionesIniciadas = true;
+        _controladorRubrica.SeIniciaronCompresiones();
         anim.SetBool("Iniciar compresiones", true);
         controlador.nuevoCiclo("Iniciar compresiones");
-        
     }
     public void iniciarCompresiones2()
     {
+        EnCompresionesTwo = true;
         if (ControladorTiempo.getTiempoSec() <= 30f)
         {
             _controladorRubrica.ActualizarRubrica(2);
@@ -73,20 +62,27 @@ public class Iniciarcompresiones : MonoBehaviour
         {
             _controladorRubrica.ActualizarRubrica(6, false);
         }
+        _controladorRubrica.SeIniciaronCompresiones();
         anim.SetBool("Iniciar compresiones 2", true);
-        Debug.Log("Se inician Compresiones");
-        CompresionesIniciadas = true;
         controlador.nuevoCiclo("Iniciar compresiones");
     }
     public void detenerCompresiones()
     {
-        CompresionesIniciadas = false;
-        anim.SetBool("Iniciar compresiones", false);
+        if (EnCompresionesOne)
+        {
+            EnCompresionesOne = false;
+            _controladorRubrica.SeDetienenCompresiones();
+            anim.SetBool("Iniciar compresiones", false);
+        }
     }
     public void detenerCompresiones2()
     {
-        CompresionesIniciadas = false;
-        anim.SetBool("Iniciar compresiones 2", false);
+        if (EnCompresionesTwo)
+        {
+            EnCompresionesTwo = false;
+            _controladorRubrica.SeDetienenCompresiones();
+            anim.SetBool("Iniciar compresiones 2", false);
+        }
     }
     public void aumentarVelocidad()
     {
@@ -185,7 +181,7 @@ public class Iniciarcompresiones : MonoBehaviour
         controlador.nuevoCiclo("Se hizo una descarga");
         if(controlador.pulso)
             _controladorRubrica.ActualizarRubrica(12,false);
-        else
+        else if(ControladorTiempo.getTiempoMinutos() < 1)
             _controladorRubrica.ActualizarRubrica(10);
     }
     public void detenerDesfibrilador()

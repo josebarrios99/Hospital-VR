@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mime;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public enum Medicamento
@@ -21,7 +17,9 @@ public class ControladorRubrica : MonoBehaviour
     public static ControladorRubrica instance;
 
     [SerializeField] private Transform ContenedorRubrica;
+    [SerializeField] private ControladorBarraPorcentaje _controladorBarraPorcentaje;
     [SerializeField] private CondicionUI PrefabCondicion;
+    [SerializeField] private Controladoracciones controlador;
 
     [SerializeField] private ListaCondiciones RubricaSo;
     
@@ -33,7 +31,11 @@ public class ControladorRubrica : MonoBehaviour
     private List<Medicamento> ListaDeMEdicamentosUtilizados;
 
     private List<CondicionUI> Condiciones = new List<CondicionUI>();
-    
+    private bool CompresionesIniciadas = false;
+    private float TiempoCompresiones = 0.0f;
+
+    private bool FirstTimeDesfi = true;
+    private List<int> FirstTimeDesfiController;
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -51,7 +53,32 @@ public class ControladorRubrica : MonoBehaviour
     {
         CrearRubrica();
     }
+    private void FixedUpdate()
+    {
+        if (CompresionesIniciadas && !controlador.pulso)
+        {
+            TiempoCompresiones += Time.deltaTime;
+            _controladorBarraPorcentaje.UpdateSliderValue(TiempoCompresiones);
+            float TimeToUpdate = 360f;
+            if (TiempoCompresiones >= TimeToUpdate)
+            {
+                ActualizarRubrica(5);
+                controlador.nuevoCiclo("Compresiones Pesentes el 60% del tiempo");
+            }
+        }
+    }
 
+    public void SeIniciaronCompresiones()
+    {
+        CompresionesIniciadas = true;
+        _controladorBarraPorcentaje.EnableDisableSlider(true);
+    }
+
+    public void SeDetienenCompresiones()
+    {
+        CompresionesIniciadas = false;
+        _controladorBarraPorcentaje.EnableDisableSlider(false);
+    }
     public int GetProgress()
     {
         Condicion[] Conditions = RubricaSo.GetConditions();
@@ -69,23 +96,34 @@ public class ControladorRubrica : MonoBehaviour
     }
     public void ActualizarRubrica(int Index, bool Success = true)
     {
-        if (Index == 0)
+        switch (Index)
         {
-            if (ultimaCondicion != null)
-            {
-                RubricaSo.UpdateCondicion(Index, false);
-            }
-        }
-
-        if (Index == 1)
-        {
-            if (ultimaCondicion != 0)
-            {
-                RubricaSo.UpdateCondicion(Index, false);
-            }
+            case 0:
+                if (ultimaCondicion != null)
+                    RubricaSo.UpdateCondicion(Index, false);
+                break;
+            case 1:
+                if (ultimaCondicion != 0)
+                    RubricaSo.UpdateCondicion(Index, false);
+                break;
+            case 7:
+            case 8:
+            case 9:
+                if (FirstTimeDesfi)
+                {
+                    if (!FirstTimeDesfiController.Contains(Index))
+                        FirstTimeDesfiController.Add(Index);
+                    if (FirstTimeDesfiController.Count >= 3)
+                        FirstTimeDesfi = false;
+                    RubricaSo.UpdateCondicion(Index, Success);
+                    break;
+                }
+                return;
+            default:
+                RubricaSo.UpdateCondicion(Index, Success);
+                break;
         }
         ultimaCondicion = Index;
-        RubricaSo.UpdateCondicion(Index, Success);
         UpdateRubrica(Index);
     }
 
@@ -97,6 +135,7 @@ public class ControladorRubrica : MonoBehaviour
     public void CrearRubrica()
     {
         ListaDeMEdicamentosUtilizados = new List<Medicamento>();
+        FirstTimeDesfiController = new List<int>();
         Condicion[] Rubrica = ObtenerCondiciones();
 
         foreach (var condicion in Rubrica)

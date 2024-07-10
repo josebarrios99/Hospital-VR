@@ -54,7 +54,7 @@ MonoBehaviour:
     success: 0
     mistake: 0
   - id: 10
-    descripcion: Se administra descarga si el ritmo es FV
+    descripcion: Realizar descarga antes de los 60 segundos
     success: 0
     mistake: 0
   - id: 11
@@ -97,7 +97,7 @@ MonoBehaviour:
   - id: 20
     descripcion: No se administra ningun otro medicamento diferente si el paciente
       esta en paro
-    success: 1
+    success: 0
     mistake: 0
   - id: 21
     descripcion: Se toma la presion arterial solo si hay pulso
