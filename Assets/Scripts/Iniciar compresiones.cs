@@ -37,7 +37,7 @@ public class Iniciarcompresiones : MonoBehaviour
     public void iniciarCompresiones()
     {
         EnCompresionesOne = true;
-        if (ControladorTiempo.getTiempoSec() <= 30f)
+        if (ControladorTiempo.getTiempoSec() <= 30f && ControladorTiempo.getTiempoMinutos() < 1)
         {
             _controladorRubrica.ActualizarRubrica(2);
         }
@@ -54,7 +54,7 @@ public class Iniciarcompresiones : MonoBehaviour
     public void iniciarCompresiones2()
     {
         EnCompresionesTwo = true;
-        if (ControladorTiempo.getTiempoSec() <= 30f)
+        if (ControladorTiempo.getTiempoSec() <= 30f && ControladorTiempo.getTiempoMinutos() < 1)
         {
             _controladorRubrica.ActualizarRubrica(2);
         }
@@ -109,7 +109,7 @@ public class Iniciarcompresiones : MonoBehaviour
     }
     public void ponerAccesoVenoso()
     {
-        if (ControladorTiempo.getTiempoSec() <= 45f)
+        if (ControladorTiempo.getTiempoSec() <= 45f && ControladorTiempo.getTiempoMinutos() < 1)
         {
             _controladorRubrica.ActualizarRubrica(16);
         }
@@ -162,7 +162,7 @@ public class Iniciarcompresiones : MonoBehaviour
     }
     public void desfibrilador()
     {
-        if (ControladorTiempo.getTiempoSec() <= 30f)
+        if (ControladorTiempo.getTiempoSec() <= 30f && ControladorTiempo.getTiempoMinutos() < 1)
         {
             _controladorRubrica.ActualizarRubrica(7);
         }
@@ -170,7 +170,7 @@ public class Iniciarcompresiones : MonoBehaviour
     }
     public void desfibrilador2()
     {
-        if (ControladorTiempo.getTiempoSec() <= 30f)
+        if (ControladorTiempo.getTiempoSec() <= 30f && ControladorTiempo.getTiempoMinutos() < 1)
         {
             _controladorRubrica.ActualizarRubrica(7);
         }

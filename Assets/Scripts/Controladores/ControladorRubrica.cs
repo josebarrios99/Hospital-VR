@@ -101,10 +101,14 @@ public class ControladorRubrica : MonoBehaviour
             case 0:
                 if (ultimaCondicion != null)
                     RubricaSo.UpdateCondicion(Index, false);
+                else
+                    RubricaSo.UpdateCondicion(Index);
                 break;
             case 1:
                 if (ultimaCondicion != 0)
                     RubricaSo.UpdateCondicion(Index, false);
+                else
+                    RubricaSo.UpdateCondicion(Index);
                 break;
             case 7:
             case 8:
