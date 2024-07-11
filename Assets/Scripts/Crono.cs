@@ -30,6 +30,7 @@ public class Crono : MonoBehaviour
     {
         if(countDown)
             tiempo = Maxtime;
+        textoCrono.color = new Color(0, 0, 0, 255);
     }
 
     public void OnStartTimer()
@@ -55,6 +56,25 @@ public class Crono : MonoBehaviour
     {
         if(StartTime)
             Cronometro();
+        
+        if (countDown)
+        {
+            if (tiempo <= 0)
+            {
+                textoCrono.text = "Fin de la simulación";
+                textoCrono.color = new Color(255, 0, 0, 255);
+                StartTime = false;
+            }
+        }
+        else
+        {
+            if (tiempo >= Maxtime)
+            {
+                textoCrono.text = "Fin de la simulación";
+                textoCrono.color = new Color(255, 0, 0, 255);
+                StartTime = false;
+            }
+        }
     }
     public string obtenerTiempo()
     {

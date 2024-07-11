@@ -32,24 +32,21 @@ public class Controladoracciones : MonoBehaviour
     }
     private void Update()
     {
-        Object cronometro = FindObjectOfType<Crono>();
+        if ( TimeController != null  && !pulso) {
 
-        if ( cronometro != null  && !pulso) {
-
-            if (FindObjectOfType<Crono>().getTiempoMinutos() >= 10)
+            if (TimeController.getTiempoMinutos() >= 10)
             {
                 verificarCiclos();
+                bool medicamentosUtilizados = _controladorRubrica.MedicamentosUtilizadosCorrectos();
+                _controladorRubrica.ActualizarRubrica(20,medicamentosUtilizados);
             }
-            
         }
-        if (cronometro != null && pulso)
+        if (TimeController != null && pulso)
         {
-            if (FindObjectOfType<Crono>().getTiempoMinutos() >= 12)
+            if (TimeController.getTiempoMinutos() >= 12)
             {
                 ControladorJugador.CantMove = true;
                 pantallaFinal.SetActive(true);
-                bool medicamentosUtilizados = _controladorRubrica.MedicamentosUtilizadosCorrectos();
-                _controladorRubrica.ActualizarRubrica(20,medicamentosUtilizados);
             }
         }
     }

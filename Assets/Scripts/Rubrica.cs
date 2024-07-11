@@ -90,11 +90,6 @@ public class Rubrica : MonoBehaviour
                 //         _controladorRubrica.ActualizarRubrica(20, false);
                 // }
                 break;
-            case Medicamento.Atropina:
-            case Medicamento.Noradrenalina:
-            case Medicamento.SulfatoDeMagnesio:
-            default:
-                break;
         }
     }
     // public void ValidarInputFrecuencia()

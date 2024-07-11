@@ -139,11 +139,7 @@ public class Iniciarcompresiones : MonoBehaviour
             case Medicamento.SulfatoDeMagnesio:
                 if (!controlador.pulso)
                     _controladorRubrica.ActualizarRubrica(20,false);
-                else
-                    _controladorRubrica.ActualizarRubrica(20);
                 break;
-            default:
-                return;
         }
         
         _controladorRubrica.ActualizarRubrica(19);
