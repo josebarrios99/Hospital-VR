@@ -43,6 +43,8 @@ public class ControlCompresiones : MonoBehaviour
     }
     public void ValidarFrecuencia()
     {
+        Debug.Log("Validando Frecuencia");
+        Debug.Log($"Valor Frecuencia: {numero}");
         if (numero >= 100 && numero <= 120) {
             _controladorRubrica.ActualizarRubrica(3);
         }
@@ -85,9 +87,7 @@ public class ControlCompresiones : MonoBehaviour
                     numero += 10;
                     ActualizarTexto();
                 }
-                
             }
-
             // Pausa para evitar un aumento muy r�pido
             yield return new WaitForSeconds(0.15f);
         }

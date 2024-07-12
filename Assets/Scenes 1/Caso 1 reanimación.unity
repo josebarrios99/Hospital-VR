@@ -4445,8 +4445,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 780012130}
-          m_TargetAssemblyTypeName: Carga, Assembly-CSharp
+        - m_Target: {fileID: 780012131}
+          m_TargetAssemblyTypeName: ControlCompresiones, Assembly-CSharp
           m_MethodName: EmpezarAumentar
           m_Mode: 1
           m_Arguments:
@@ -4461,8 +4461,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 780012130}
-          m_TargetAssemblyTypeName: Carga, Assembly-CSharp
+        - m_Target: {fileID: 780012131}
+          m_TargetAssemblyTypeName: ControlCompresiones, Assembly-CSharp
           m_MethodName: DetenerAumentar
           m_Mode: 1
           m_Arguments:
@@ -6222,6 +6222,30 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Selected, Assembly-CSharp
         m_MethodName: ActivarRaycast
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2140716342}
+        m_TargetAssemblyTypeName: Carga, Assembly-CSharp
+        m_MethodName: TurnOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2112376763}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -15407,9 +15431,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1213792494}
-        m_TargetAssemblyTypeName: Iniciarcompresiones, Assembly-CSharp
-        m_MethodName: descarga
+      - m_Target: {fileID: 2140716342}
+        m_TargetAssemblyTypeName: Carga, Assembly-CSharp
+        m_MethodName: InteractWithObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15419,9 +15443,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2140716342}
-        m_TargetAssemblyTypeName: Carga, Assembly-CSharp
-        m_MethodName: InteractWithObject
+      - m_Target: {fileID: 1213792494}
+        m_TargetAssemblyTypeName: Iniciarcompresiones, Assembly-CSharp
+        m_MethodName: descarga
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26722,7 +26746,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 77.399994, y: 0.0000000048603397}
+  m_AnchoredPosition: {x: 77.39996, y: 0.0000000048603397}
   m_SizeDelta: {x: 77.400024, y: 50}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &792933056
@@ -39942,7 +39966,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.1285837}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -26.999939, y: -15.674355}
+  m_AnchoredPosition: {x: -27, y: -15.674347}
   m_SizeDelta: {x: -21.551, y: -26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1162572633
@@ -41944,9 +41968,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1439647959}
-        m_TargetAssemblyTypeName: Iniciarcompresiones, Assembly-CSharp
-        m_MethodName: descarga
+      - m_Target: {fileID: 1992325835}
+        m_TargetAssemblyTypeName: Carga, Assembly-CSharp
+        m_MethodName: InteractWithObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -41956,9 +41980,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1992325835}
-        m_TargetAssemblyTypeName: Carga, Assembly-CSharp
-        m_MethodName: InteractWithObject
+      - m_Target: {fileID: 1439647959}
+        m_TargetAssemblyTypeName: Iniciarcompresiones, Assembly-CSharp
+        m_MethodName: descarga
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -43760,8 +43784,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 780012130}
-          m_TargetAssemblyTypeName: Carga, Assembly-CSharp
+        - m_Target: {fileID: 780012131}
+          m_TargetAssemblyTypeName: ControlCompresiones, Assembly-CSharp
           m_MethodName: EmpezarDisminuir
           m_Mode: 1
           m_Arguments:
@@ -43776,8 +43800,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 780012130}
-          m_TargetAssemblyTypeName: Carga, Assembly-CSharp
+        - m_Target: {fileID: 780012131}
+          m_TargetAssemblyTypeName: ControlCompresiones, Assembly-CSharp
           m_MethodName: DetenerDisminuir
           m_Mode: 1
           m_Arguments:
@@ -50803,7 +50827,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.81419617}
   m_AnchorMax: {x: 1, y: 0.8985066}
-  m_AnchoredPosition: {x: -82.65021, y: -13.649963}
+  m_AnchoredPosition: {x: -82.65015, y: -13.649902}
   m_SizeDelta: {x: -107.900024, y: 35.799988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1554952615
@@ -54472,6 +54496,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1992325835}
+        m_TargetAssemblyTypeName: Carga, Assembly-CSharp
+        m_MethodName: TurnOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2004557997}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1711789847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55255,7 +55303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.2123437}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.00008392334}
+  m_AnchoredPosition: {x: 0, y: -0.000091552734}
   m_SizeDelta: {x: -354.9, y: 30.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1717917390
@@ -58744,7 +58792,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -38.69995, y: -0.00019073}
+  m_AnchoredPosition: {x: -38.700195, y: -0.00019073}
   m_SizeDelta: {x: 77.399994, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1961417558
@@ -59280,18 +59328,6 @@ MonoBehaviour:
       - m_Target: {fileID: 2140716342}
         m_TargetAssemblyTypeName: Carga, Assembly-CSharp
         m_MethodName: TurnOn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2140716342}
-        m_TargetAssemblyTypeName: Carga, Assembly-CSharp
-        m_MethodName: InteractWithObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -50,16 +50,11 @@ public class Rubrica : MonoBehaviour
             int indiceBoton = i; // Captura el valor actual de 'i' para el delegado
             botonesPaciente[i].onClick.AddListener(() => ValidarOrdenBoton(indiceBoton));
         }
-        for (int i = 0; i < botonesDescarga.Length; i++)
-        {
-            int indiceBoton = i; // Captura el valor actual de 'i' para el delegado
-            botonesDescarga[i].onClick.AddListener(delegate { ValidarOrdenBotonDescarga(indiceBoton); });
-        }
-        for (int i = 0; i < botonesPulso.Length; i++)
-        {
-            int indiceBoton = i; // Captura el valor actual de 'i' para el delegado
-            botonesPulso[i].onClick.AddListener(delegate { ValidarOrdenBotonPulso(indiceBoton); });
-        }
+        // for (int i = 0; i < botonesPulso.Length; i++)
+        // {
+        //     int indiceBoton = i; // Captura el valor actual de 'i' para el delegado
+        //     botonesPulso[i].onClick.AddListener(delegate { ValidarOrdenBotonPulso(indiceBoton); });
+        // }
     }
     public void ValidarInput()
     {
@@ -167,50 +162,6 @@ public class Rubrica : MonoBehaviour
                 _controladorRubrica.ActualizarRubrica(1);
                 controlador.nuevoCiclo("Se tom? el pulso");
             }
-        }
-    }
-    void ValidarOrdenBotonDescarga(int indiceBoton)
-    {
-        if (indiceBoton == secuenciaDescarga[indiceSiguienteDescarga])
-        {
-            indiceSiguienteDescarga++;
-
-            if (indiceSiguienteDescarga >= secuenciaDescarga.Count)
-            {
-                _controladorRubrica.ActualizarRubrica(11);
-            }
-        }
-        else
-        {
-            _controladorRubrica.ActualizarRubrica(11,false);
-            indiceSiguienteDescarga = 0;
-        }
-    }
-    void ValidarOrdenBotonPulso(int indiceBoton)
-    {
-        Debug.Log("Se Toma Pulso 2");
-        if (indiceBoton == secuenciaPulso[indiceSiguientePulso] && controlador.tienePulso())
-        {
-            // La acción es en el orden correcto
-            Debug.Log("Acción " + indiceBoton + " realizada correctamente.");
-            indiceSiguientePulso++;
-
-            if (indiceSiguientePulso >= secuenciaPulso.Count)
-            {
-                _controladorRubrica.ActualizarRubrica(13);
-                // Todas las acciones se han realizado en el orden correcto
-                Debug.Log("¡Todas las acciones realizadas en el orden correcto!");
-                // Aquí puedes activar otro objeto o hacer cualquier otra acción
-            }
-        }
-
-        else
-        {
-            _controladorRubrica.ActualizarRubrica(13,false);
-            // La acción está fuera de orden
-            Debug.Log("¡Error! Acción fuera de orden.");
-            // Puedes reiniciar el contador aquí si quieres reiniciar el orden después de un error
-            indiceSiguientePulso = 0;
         }
     }
 }

@@ -35,6 +35,7 @@ public class ControladorRubrica : MonoBehaviour
     private float TiempoCompresiones = 0.0f;
 
     private bool FirstTimeDesfi = true;
+    private bool Descarga = false;
     private List<int> FirstTimeDesfiController;
     private void Awake()
     {
@@ -96,6 +97,11 @@ public class ControladorRubrica : MonoBehaviour
     }
     public void ActualizarRubrica(int Index, bool Success = true)
     {
+        if (Descarga && Index != 11)
+        {
+            Debug.Log($"Update Index : {Index}");
+            RubricaSo.UpdateCondicion(11,false);
+        }
         switch (Index)
         {
             case 0:
@@ -120,13 +126,18 @@ public class ControladorRubrica : MonoBehaviour
                     if (FirstTimeDesfiController.Count >= 3)
                         FirstTimeDesfi = false;
                     RubricaSo.UpdateCondicion(Index, Success);
-                    break;
                 }
-                return;
+                break;
+            case 11:
+                if (Descarga)
+                    RubricaSo.UpdateCondicion(Index);
+                break;
             default:
                 RubricaSo.UpdateCondicion(Index, Success);
                 break;
         }
+
+        Descarga = false;
         ultimaCondicion = Index;
         UpdateRubricaView(Index);
     }
@@ -136,6 +147,10 @@ public class ControladorRubrica : MonoBehaviour
         return RubricaSo.GetConditions();
     }
 
+    public bool GetPulso()
+    {
+        return controlador.pulso;
+    }
     public void CrearRubrica()
     {
         ListaDeMedicamentosUtilizados = new List<Medicamento>();
@@ -191,5 +206,10 @@ public class ControladorRubrica : MonoBehaviour
     public void UseMedicamento()
     {
         ListaDeMedicamentosUtilizados.Add(UltimoMedicamentoSeleccionado);
+    }
+    
+    public void OnDescarga()
+    {
+        Descarga = true;
     }
 }

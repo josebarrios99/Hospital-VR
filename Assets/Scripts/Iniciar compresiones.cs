@@ -37,6 +37,7 @@ public class Iniciarcompresiones : MonoBehaviour
     public void iniciarCompresiones()
     {
         EnCompresionesOne = true;
+        _controladorRubrica.ActualizarRubrica(11);
         if (ControladorTiempo.getTiempoSec() <= 30f && ControladorTiempo.getTiempoMinutos() < 1)
         {
             _controladorRubrica.ActualizarRubrica(2);
@@ -54,6 +55,7 @@ public class Iniciarcompresiones : MonoBehaviour
     public void iniciarCompresiones2()
     {
         EnCompresionesTwo = true;
+        _controladorRubrica.ActualizarRubrica(11);
         if (ControladorTiempo.getTiempoSec() <= 30f && ControladorTiempo.getTiempoMinutos() < 1)
         {
             _controladorRubrica.ActualizarRubrica(2);
@@ -179,6 +181,7 @@ public class Iniciarcompresiones : MonoBehaviour
             _controladorRubrica.ActualizarRubrica(12,false);
         else if(ControladorTiempo.getTiempoMinutos() < 1)
             _controladorRubrica.ActualizarRubrica(10);
+        _controladorRubrica.OnDescarga();
     }
     public void detenerDesfibrilador()
     {
