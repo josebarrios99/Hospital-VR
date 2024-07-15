@@ -149,8 +149,6 @@ public class Rubrica : MonoBehaviour
     {
         if (!controlador.tienePulso())
         {
-            Debug.Log("Se Toma Pulso 1");
-            // Debug.Log($"Indice Siguiente Paciente {indiceSiguientePaciente}");
             if (indiceBoton == 0)
             {
                 indiceSiguientePaciente++;
@@ -162,6 +160,12 @@ public class Rubrica : MonoBehaviour
                 _controladorRubrica.ActualizarRubrica(1);
                 controlador.nuevoCiclo("Se tom? el pulso");
             }
+        }
+        else
+        {
+            if (indiceBoton != 0)
+                if(_controladorRubrica.GetDejarDeManipular())
+                    _controladorRubrica.ActualizarRubrica(13);
         }
     }
 }

@@ -11,7 +11,7 @@ public class Crono : MonoBehaviour
     [SerializeField] private bool countDown;
 
     [SerializeField] private float Maxtime = 720f;
-    
+    private float animTimeControler = 0f;
     private int tiempoMinutos, tiempoSegundos, tiempoDecimas;
     private bool StartTime = false;
     public float GetMaxTime()
@@ -30,7 +30,7 @@ public class Crono : MonoBehaviour
     {
         if(countDown)
             tiempo = Maxtime;
-        textoCrono.color = new Color(0, 0, 0, 255);
+        textoCrono.color = new Color(255, 255, 255, 255);
     }
 
     public void OnStartTimer()
@@ -38,9 +38,13 @@ public class Crono : MonoBehaviour
         StartTime = true;
     }
     void Cronometro()
-    {   
-        if(countDown)
+    {
+        if (countDown)
+        {
             tiempo -= Time.deltaTime;
+            if (tiempo <= 120f)
+                AnimColor();
+        }
         else
             tiempo += Time.deltaTime;
 
@@ -51,6 +55,35 @@ public class Crono : MonoBehaviour
         textoCrono.text = string.Format("{0:00}:{1:00}:{2:00}", tiempoMinutos, tiempoSegundos, tiempoDecimas);
     }
 
+    private void AnimColor()
+    {
+        animTimeControler += Time.deltaTime;
+        if (animTimeControler <= 2f)
+        {
+            StartColorAnimation();
+            
+        }
+        else
+        {
+            StartColorAnimation(false);
+            if (animTimeControler >= 4f)
+            {
+                animTimeControler = 0f;
+            }
+        }
+    }
+    private void StartColorAnimation(bool AlertColor = true)
+    {
+        if (AlertColor)
+            SwitchColor(Color.red);
+        else
+            SwitchColor(Color.white);
+    }
+    
+    private void SwitchColor(Color newColor)
+    {
+        textoCrono.color = newColor;
+    }
     // Update is called once per frame
     void Update()
     {

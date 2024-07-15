@@ -36,6 +36,7 @@ public class ControladorRubrica : MonoBehaviour
 
     private bool FirstTimeDesfi = true;
     private bool Descarga = false;
+    private bool DejarDeManipularDesfi = false;
     private List<int> FirstTimeDesfiController;
     private void Awake()
     {
@@ -138,6 +139,7 @@ public class ControladorRubrica : MonoBehaviour
         }
 
         Descarga = false;
+        DejarDeManipularDesfi = false;
         ultimaCondicion = Index;
         UpdateRubricaView(Index);
     }
@@ -207,9 +209,22 @@ public class ControladorRubrica : MonoBehaviour
     {
         ListaDeMedicamentosUtilizados.Add(UltimoMedicamentoSeleccionado);
     }
-    
     public void OnDescarga()
     {
         Descarga = true;
+    }
+
+    public void OnDesfiTurnOn()
+    {
+        DejarDeManipularDesfi = false;
+    }
+    public void OnDesfiTurnOff()
+    {
+        DejarDeManipularDesfi = true;
+    }
+
+    public bool GetDejarDeManipular()
+    {
+        return DejarDeManipularDesfi;
     }
 }

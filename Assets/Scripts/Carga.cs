@@ -28,8 +28,6 @@ public class Carga : MonoBehaviour
     {
         if (On)
         {
-            if(_controladorRubrica.GetPulso())
-                _controladorRubrica.ActualizarRubrica(13,false);
             _controladorRubrica.ActualizarRubrica(8);
         }
         else
@@ -42,14 +40,13 @@ public class Carga : MonoBehaviour
     {
         On = false;
         texto.text = "0";
-        if(_controladorRubrica.GetPulso())
-            _controladorRubrica.ActualizarRubrica(13);
+        _controladorRubrica.OnDesfiTurnOff();
     }
 
     public void TurnOn()
     {
         On = true;
-        texto.text = "0";
+        _controladorRubrica.OnDesfiTurnOn();
     }
     void ActualizarTexto()
     {
