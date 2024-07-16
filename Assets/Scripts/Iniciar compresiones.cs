@@ -111,10 +111,11 @@ public class Iniciarcompresiones : MonoBehaviour
     }
     public void ponerAccesoVenoso()
     {
-        if (ControladorTiempo.getTiempoSec() <= 45f && ControladorTiempo.getTiempoMinutos() < 1)
-        {
+        float currentTime = ControladorTiempo.getTiempoSec() + (ControladorTiempo.getTiempoMinutos() * 60);
+        if (currentTime <= 90f)
             _controladorRubrica.ActualizarRubrica(16);
-        }
+        else
+            _controladorRubrica.ActualizarRubrica(16, false);
         controlador.nuevoCiclo("Se pone acceso venoso");
     }
     public void ponerMedicamento()

@@ -79,7 +79,7 @@ MonoBehaviour:
     success: 0
     mistake: 0
   - id: 16
-    descripcion: Se puso un acceso venoso antes de 45 segundos
+    descripcion: Se puso un acceso venoso antes de 1 minuto 30 segundos
     success: 0
     mistake: 0
   - id: 17

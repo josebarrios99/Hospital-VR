@@ -37,6 +37,7 @@ public class ControladorRubrica : MonoBehaviour
     private bool FirstTimeDesfi = true;
     private bool Descarga = false;
     private bool DejarDeManipularDesfi = false;
+    private bool StopCompresiones = false;
     private List<int> FirstTimeDesfiController;
     private void Awake()
     {
@@ -57,19 +58,21 @@ public class ControladorRubrica : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (CompresionesIniciadas && !controlador.pulso)
-        {
-            TiempoCompresiones += Time.deltaTime;
-            _controladorBarraPorcentaje.UpdateSliderValue(TiempoCompresiones);
-            float TimeToUpdate = 360f;
-            if (TiempoCompresiones >= TimeToUpdate)
+        if(!StopCompresiones)
+            if (CompresionesIniciadas && !controlador.pulso)
             {
-                ActualizarRubrica(5);
-                controlador.nuevoCiclo("Compresiones Pesentes el 60% del tiempo");
+                TiempoCompresiones += Time.deltaTime;
+                _controladorBarraPorcentaje.UpdateSliderValue(TiempoCompresiones);
+                float TimeToUpdate = 360f;
+                if (TiempoCompresiones >= TimeToUpdate)
+                {
+                    ActualizarRubrica(5);
+                    controlador.nuevoCiclo("Compresiones Pesentes el 60% del tiempo");
+                    StopCompresiones = true;
+                }
             }
-        }
     }
-
+    
     public void SeIniciaronCompresiones()
     {
         CompresionesIniciadas = true;
